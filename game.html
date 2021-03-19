@@ -12,13 +12,6 @@
 </head>
 <body>
 
-    <div class="container">
-        <div id="timeBar" >
-            <div id="timeBarChild"></div>
-          </div>
-
-
-    </div> -->
 
 
     <header>
@@ -32,11 +25,11 @@
                     <div class="botCard playerCard">
                         <div class="botImg">
                             <i class="fas fa-robot"></i></div>
-                        <div class="botInfo"><h1>Bot</h1></div>
+                        <div id="botInfo" class="botInfo"><h1>Bot</h1></div>
                     </div>
                 </div>
-                <div class="timerDiv">
-                    <p>timer</p>
+                <div id="timeBar" >
+                    <div id="timeBarChild"></div>
                 </div>
                 <div class="playerDiv">
                     <div class="playerCard">
@@ -45,8 +38,8 @@
                             <div>Användarnamn</div>
                         </div>
                         <div id="inputPlayer" class="userInput">
-                            <input autofocus type="text">
-                            <div class="defaultBtn">GO &rsaquo;</div>
+                            <input id="inputNumber" autofocus type="text">
+                            <div id="guessNumberBtn" class="defaultBtn">GO &rsaquo;</div>
                         </div>
                     </div>
                 </div>
