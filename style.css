@@ -8,7 +8,6 @@ main{
 	align-items: center;
 	flex-direction: column;
 	margin-top: 30vh;
-
 }
 
 body{
@@ -44,7 +43,6 @@ header{
 	flex-direction: column;
 	height: 750px;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
-
 	border-radius: 10px;
 	width:75%;
 }
@@ -65,6 +63,7 @@ header{
 .botCard{
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-around;
 }
 .botDiv{
 	display: flex;
@@ -90,7 +89,7 @@ header{
 .playerCard{
 	display: flex;
 	width: 40vw;
-	height: 200px;
+	height: 150px;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
@@ -155,9 +154,11 @@ input:focus{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	width: 150px;
+	align-content: center;
+	width: 175px;
 	height: 50px;
 	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	color: #FFFF;
 	border-radius: 10px;
 	font-family: avenir next;
@@ -165,6 +166,23 @@ input:focus{
 	font-weight: bolder;
 	font-size: 2.5rem;
 }
+
+
+.defaultBtn:hover{
+	width: 180px;
+	height: 55px;
+}
+.defaultBtn:active{
+	width: 170px;
+	height: 45px;
+}
+
+
+.botCard{
+
+}
+
+/* 
 
 .startButton {
 	box-shadow:inset 0px 1px 0px 0px #f29c93;
