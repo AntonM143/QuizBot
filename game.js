@@ -1,7 +1,9 @@
 window.addEventListener("load", startGame);
 let guessButton = document.getElementById("guessNumberBtn");
 guessButton.addEventListener("click", checkAnswer);
-let maxNumber = 10;
+let maxNumber = 10; 
+let timeleft = 20; 
+let timeBar = document.getElementById("timeBar");
 let randomNumber = Math.floor(Math.random() * maxNumber);
 
 /* function botOne(){
@@ -33,14 +35,14 @@ function botThree(){
 botThree() */
 function startGame(){
     console.log("%cTHE GAME WAS STARTED", "color: green; font-size: 20px;")
-    let box = document.getElementById("demo");
+    let box = document.getElementById("botInfo");
     box.innerText = "Start guessing!";
     let inputNumber = document.getElementById("inputNumber").value = " ";
     timer()
     
 }
 function checkAnswer(){
-    let box = document.getElementById("demo");
+    let box = document.getElementById("botInfo");
     let inputNumber = document.getElementById("inputNumber").value;
     console.log("The right answer is: " + randomNumber);
     console.log("Your answer is: " + inputNumber);
@@ -60,22 +62,24 @@ function checkAnswer(){
 
         box.innerText = "You won!!";
         console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
-        setTimeout(reloadToIndex, 2000);
+        
+        timeBar.innerHTML = " "
+        setTimeout(reloadToIndex, 10000);
 
     }
 }
 
 function timer(){
     /* clearInterval(timeleft = 0) */
-    timeleft = 20; 
-    let timeBar = document.getElementById("timeBar");
+   
+    
     timeBar.style = "--duration: 20"
    
       setInterval(function() {
           if (timeleft <= 0 ) { 
               
               clearInterval(timeleft = 0)
-              timeBar.innerHTML = "din tid tog slut"
+              timeBar.innerHTML = "GAME OVER"
               setTimeout(reloadToIndex, 5000);
               return
              
