@@ -1,3 +1,162 @@
+<<<<<<< Updated upstream
+=======
+*{
+	box-sizing: border-box;
+}
+
+main{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 30vh;
+
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+header{
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
+	top:0;
+	left:0;
+	right:0;
+	height: 20vh;
+}
+
+.brand{
+	display: flex;
+	justify-content: center;
+}
+
+.brandImg{
+	display: flex;
+	height: 100%;
+	width: auto;
+}
+
+
+.gameContainer{
+	display: flex;
+	flex-direction: column;
+	height: 750px;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+
+	border-radius: 10px;
+	width:75%;
+}
+
+.botImg{
+
+}
+.fa-robot{
+	font-size: 100px;
+	color:#E60A13;
+}
+.botInfo{
+	font-family: lores-12,sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	color: #484848;
+}
+.botCard{
+	flex-direction: column;
+	align-items: center;
+}
+.botDiv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex:2
+}
+
+.timerDiv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex:1
+}
+
+.playerDiv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex:2
+}
+
+.playerCard{
+	display: flex;
+	width: 40vw;
+	height: 200px;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	border-radius: 10px;
+}
+
+.profileInfo{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	flex: 1;
+}
+
+.profileImg{
+	display: flex;
+	object-fit: contain;
+}
+
+.userInput{
+	display: flex;	
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	flex: 1;
+}
+
+ input {
+	text-align: center;
+	background-color: transparent;
+	width: 100%;
+	border:none;
+	text-decoration: none;
+	font-family: lores-12,sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	color: #484848;
+	font-size: 3rem;
+}
+
+input:focus{
+	outline: 0;
+}
+
+.defaultBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width: 150px;
+	height: 50px;
+	background-color: #E60A13;
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 2.5rem;
+}
+
+
+.botCard{
+
+}
+
+/* 
+>>>>>>> Stashed changes
 .startButton {
 	box-shadow:inset 0px 1px 0px 0px #f29c93;
 	background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
