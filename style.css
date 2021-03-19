@@ -184,6 +184,30 @@ input:focus{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 100vw;
-    min-height: 100vh;
+  
 }
+/* TIMER */
+
+  #timeBar {
+    margin: 1rem;
+    overflow: hidden;
+    width: 50%;
+    
+  }
+  #timeBarChild {
+    height: 20px;
+    border-radius:6px;
+    animation: roundtime calc(var(--duration) * 1s) linear forwards;
+    transform-origin: left center;
+    background: linear-gradient(to bottom, red, #900);
+  }
+
+  
+
+  
+  @keyframes roundtime {
+    to {
+       /*  More performant than `width`  */
+      transform: scaleX(0);
+    }
+  } 
