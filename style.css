@@ -182,7 +182,7 @@ input:focus{
 
 }
 
-/* 
+
 
 .startButton {
 	box-shadow:inset 0px 1px 0px 0px #f29c93;
@@ -222,6 +222,7 @@ input:focus{
     margin: 1rem;
     overflow: hidden;
     width: 50%;
+	text-align: center;
     
   }
   #timeBarChild {

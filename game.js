@@ -7,7 +7,7 @@ guessButton.addEventListener("click", () => {
     inputNumber.focus()
 });
 
-let maxNumber = 10;
+
 
 guessButton.addEventListener("click", checkAnswer);
 let maxNumber = 10; 
