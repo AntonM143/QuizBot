@@ -44,21 +44,24 @@ function checkAnswer(){
     let inputNumber = document.getElementById("inputNumber").value;
     console.log("The right answer is: " + randomNumber);
     console.log("Your answer is: " + inputNumber);
-    
-    if(inputNumber.length == 0){
-        box.innerText = "Du måste skriva in en siffra!"
+
+    if(isNaN(inputNumber)){
+        box.innerText = "You must choose a number!";
+        inputNumber = " ";
         return
     }
     if(inputNumber > randomNumber){
-        box.innerText = "Lägre!"
+        box.innerText = "Lower!";
 
     }if(inputNumber < randomNumber){
-        box.innerText = "Högre!"
+        box.innerText = "Higher!";
     }
     if(inputNumber == randomNumber){
-        box.innerText = "You won!!"
-        console.log("%cYOU WON!!!", "color: blue; font-size: 20px;")
-        setTimeout(reloadToIndex, 2000)
+
+        box.innerText = "You won!!";
+        console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
+        setTimeout(reloadToIndex, 2000);
+
     }
 }
 
