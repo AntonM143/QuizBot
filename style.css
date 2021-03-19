@@ -44,7 +44,7 @@ header{
 	flex-direction: column;
 	height: 750px;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
-
+	background-position: right;
 	border-radius: 10px;
 	width:75%;
 }
@@ -73,8 +73,8 @@ header{
 .playerCard{
 	display: flex;
 	width: 40vw;
-	height: 200px;
-	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	height: 150px;
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
 
@@ -120,9 +120,10 @@ input:focus{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	width: 150px;
+	width: 175px;
 	height: 50px;
 	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	color: #FFFF;
 	border-radius: 10px;
 	font-family: avenir next;
