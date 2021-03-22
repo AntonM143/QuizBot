@@ -3,7 +3,7 @@ let guessButton = document.getElementById("guessNumberBtn");
 
 guessButton.addEventListener("click", () => {
     let inputNumber = document.getElementById("inputNumber")
-    checkAnswer()
+    checkAnswer
     inputNumber.focus()
 });
 
@@ -66,11 +66,11 @@ function checkAnswer(){
     if(inputNumber > randomNumber){
         box.innerText = "Lower!";
 
-        let inputNumber = document.getElementById("inputNumber").value = " ";
+        /* let inputNumber = document.getElementById("inputNumber").value = " "; */
 
     }if(inputNumber < randomNumber){
         box.innerText = "Higher!";
-        let inputNumber = document.getElementById("inputNumber").value = " ";
+        /* let inputNumber = document.getElementById("inputNumber").value = " "; */
     }
     if(inputNumber == randomNumber){
 
