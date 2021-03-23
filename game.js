@@ -1,20 +1,42 @@
-window.addEventListener("load", startGame);
+window.addEventListener("load", initSite);
+//let body = document.getElementById("body");
+function initSite(){
+    const params = new URLSearchParams(window.location.search);
+
+    const name = params.get("difficulty");
+        testing(name)
+    
+}
+
+
+let mediumButton = document.getElementById("mediumButton")
+let hardButton = document.getElementById("hardButton")
+
+
 let guessButton = document.getElementById("guessNumberBtn");
 
-guessButton.addEventListener("click", () => {
-    let inputNumber = document.getElementById("inputNumber")
-    checkAnswer
-    inputNumber.focus()
-});
 
 
 
-guessButton.addEventListener("click", checkAnswer);
-let maxNumber = 10; 
+
+
+
 let timeleft = 20; 
-let timeBar = document.getElementById("timeBar");
+function testing(maxNumber){
+    startGame()
+    let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+    let guessButton = document.getElementById("guessNumberBtn");
+    guessButton.addEventListener("click", ()=>{
+        checkAnswer(randomNumber);
+    });
+    console.log(randomNumber)
+}
 
-let randomNumber = Math.floor(Math.random() * maxNumber);
+
+    /* Change location to game.html with window.location? */
+    /* setUrl(game.html?difficulty=easy) */
+
+
 
 /* function botOne(){
     let divNumber = document.getElementById("botOne")
@@ -48,13 +70,17 @@ function startGame(){
     let box = document.getElementById("botInfo");
     box.innerText = "Start guessing!";
     let inputNumber = document.getElementById("inputNumber").value = " ";
-
+    let timeBar = document.getElementById("timeBar");
     timer()
-
+    
 }
-function checkAnswer(){
+
+function checkAnswer(random){
     let box = document.getElementById("botInfo");
     let inputNumber = document.getElementById("inputNumber").value;
+    
+    let randomNumber = random
+   
     console.log("The right answer is: " + randomNumber);
     console.log("Your answer is: " + inputNumber);
 
@@ -103,6 +129,7 @@ function timer(){
       }, 1000);
      
 }
+
 function reloadToIndex(){
     location.href = "../index.html"
 }
