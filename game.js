@@ -1,9 +1,19 @@
 window.addEventListener("load", startGame);
 let guessButton = document.getElementById("guessNumberBtn");
+
+guessButton.addEventListener("click", () => {
+    let inputNumber = document.getElementById("inputNumber")
+    checkAnswer
+    inputNumber.focus()
+});
+
+
+
 guessButton.addEventListener("click", checkAnswer);
 let maxNumber = 10; 
 let timeleft = 20; 
 let timeBar = document.getElementById("timeBar");
+
 let randomNumber = Math.floor(Math.random() * maxNumber);
 
 /* function botOne(){
@@ -38,8 +48,9 @@ function startGame(){
     let box = document.getElementById("botInfo");
     box.innerText = "Start guessing!";
     let inputNumber = document.getElementById("inputNumber").value = " ";
+
     timer()
-    
+
 }
 function checkAnswer(){
     let box = document.getElementById("botInfo");
@@ -55,8 +66,11 @@ function checkAnswer(){
     if(inputNumber > randomNumber){
         box.innerText = "Lower!";
 
+        /* let inputNumber = document.getElementById("inputNumber").value = " "; */
+
     }if(inputNumber < randomNumber){
         box.innerText = "Higher!";
+        /* let inputNumber = document.getElementById("inputNumber").value = " "; */
     }
     if(inputNumber == randomNumber){
 
