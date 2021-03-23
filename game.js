@@ -46,7 +46,10 @@ botThree() */
 function startGame(){
     console.log("%cTHE GAME WAS STARTED", "color: green; font-size: 20px;")
     let box = document.getElementById("botInfo");
-    box.innerText = "Start guessing!";
+    const headlineText = document.createElement("h1")
+    headlineText.innerText = "Start guessing!"
+    box.append(headlineText)
+
     let inputNumber = document.getElementById("inputNumber").value = " ";
 
     timer()
@@ -55,33 +58,77 @@ function startGame(){
 function checkAnswer(){
     let box = document.getElementById("botInfo");
     let inputNumber = document.getElementById("inputNumber").value;
+    const headlineText = document.createElement("h1")
+    const iconDiv = document.createElement("div") 
+
     console.log("The right answer is: " + randomNumber);
     console.log("Your answer is: " + inputNumber);
 
     if(isNaN(inputNumber)){
-        box.innerText = "You must choose a number!";
-        inputNumber = " ";
+        headlineText.innerText = "Select a number!"
+        box.append(headlineText)
         return
     }
-    if(inputNumber > randomNumber){
-        box.innerText = "Lower!";
 
-        /* let inputNumber = document.getElementById("inputNumber").value = " "; */
+    if(inputNumber > randomNumber){
+        box.innerHTML = " "
+        headlineText.innerText = "Lower!"
+        iconDiv.className = "fas fa-arrow-down"
+        box.append(headlineText, iconDiv)
 
     }if(inputNumber < randomNumber){
-        box.innerText = "Higher!";
-        /* let inputNumber = document.getElementById("inputNumber").value = " "; */
+        box.innerHTML = " "
+        headlineText.innerText = "Higher!"
+        iconDiv.className = "fas fa-arrow-up"
+        box.append(headlineText, iconDiv)
     }
+
     if(inputNumber == randomNumber){
 
-        box.innerText = "You won!!";
+        box.innerHTML = " "
+        headlineText.innerText = "WIN!"
+        box.append(headlineText)
         console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
-        
         timeBar.innerHTML = " "
-        setTimeout(reloadToIndex, 10000);
-
+        setTimeout(console.log("game over"), 10000);
+        popup()
     }
 }
+
+    function popup(){
+        const headlineDiv = document.createElement("div")
+        const headlineText = document.createElement("h1")
+        const popupIcon = document.createElement("div")
+        popupIcon.id = "popupIcon"
+        const btnDiv = document.createElement("div")
+        btnDiv.className = "btnDiv"
+        const tryAgainBtn = document.createElement("div")
+        const exitBtn = document.createElement("div")
+        const popupBackground = document.getElementById("popupBackground")
+
+        const option = document.getElementById("popup")
+
+        popupBackground.style.display = "block"
+    
+        headlineText.innerText = "You win!"
+        headlineDiv.append(headlineText)
+        popupIcon.className = "fas fa-medal"
+
+        tryAgainBtn.className = "defaultBtn"
+        exitBtn.className = "defaultBtn"
+        tryAgainBtn.innerText = "again!"
+        exitBtn.innerText = "Exit"
+
+        btnDiv.append(tryAgainBtn,exitBtn)
+
+        option.append(headlineDiv,popupIcon,btnDiv)
+
+
+
+        popupBackground.append(option)
+
+
+    }
 
 function timer(){
     /* clearInterval(timeleft = 0) */
@@ -103,9 +150,9 @@ function timer(){
       }, 1000);
      
 }
-function reloadToIndex(){
+/* function reloadToIndex(){
     location.href = "../index.html"
-}
+} */
 
 
 
