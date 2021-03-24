@@ -84,6 +84,7 @@ header{
 	justify-content: center;
 	align-items: center;
 	flex:2
+	
 }
 
 .playerCard{
@@ -140,6 +141,10 @@ input:focus{
 .fineInfo{
 	font-size: 30px;
 }
+#more {
+	display: none;
+}
+
 .ruleCard{
 	display: flex;
 	width: 80vw;
