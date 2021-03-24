@@ -67,7 +67,7 @@ header{
 	font-size: 50px;
 	color: #484848;
 	white-space: nowrap;
-	flex:1
+	flex:3
 }
 
 .fa-arrow-down{
@@ -197,13 +197,12 @@ input:focus{
 }
 
 /* .defaultBtn:hover{
-	width: 180px;
-	height: 55px;
+	width:55%
+
 }
 
 .defaultBtn:active{
-	width: 170px;
-	height: 45px;
+	width:45%
 } */
 
 .startButton {
@@ -270,7 +269,7 @@ input:focus{
     z-index: 99;
     margin: 8% auto; 
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
-    width: 30vw; 
+    max-width: 100%; 
     padding: 0.5rem;
     animation: animatezoom 0.6s
 	}

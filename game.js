@@ -1,3 +1,5 @@
+
+
 window.addEventListener("load", startGame);
 let guessButton = document.getElementById("guessNumberBtn");
 
@@ -123,7 +125,7 @@ function checkAnswer(){
 
         option.append(headlineDiv,popupIcon,btnDiv)
 
-
+        exitBtn.addEventListener("click",reloadToIndex )
 
         popupBackground.append(option)
 
@@ -150,9 +152,9 @@ function timer(){
       }, 1000);
      
 }
-/* function reloadToIndex(){
+function reloadToIndex(){
     location.href = "../index.html"
-} */
+}
 
 
 
