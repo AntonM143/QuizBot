@@ -1,14 +1,31 @@
 window.addEventListener("load", initSite);
-//let body = document.getElementById("body");
+
 const params = new URLSearchParams(window.location.search);
 const number = params.get("difficulty");
+
+let timeleft = 20; 
+let guessButton = document.getElementById("guessNumberBtn");
+
 function initSite(){
         testing(number)
-    
+        checkLogin();
 }
-let timeleft = 20; 
 
-let guessButton = document.getElementById("guessNumberBtn");
+
+  
+function checkLogin(){
+    let loggedInUser = JSON.parse(localStorage.getItem("login"));
+    if(loggedInUser == null){
+        location.replace("login.html");
+    }
+}
+
+
+
+
+
+
+
 
 
 
