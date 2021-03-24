@@ -90,7 +90,7 @@ header{
 .playerCard{
 	display: flex;
 	width: 40vw;
-	height: 200px;
+	height: 150px;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
@@ -145,6 +145,9 @@ input:focus{
 	display: none;
 }
 
+.fineInfo{
+	font-size: 30px;
+}
 .ruleCard{
 	display: flex;
 	width: 80vw;

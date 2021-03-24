@@ -1,15 +1,20 @@
+// ------------------------dölja spelregler----------------------          
 function myFunction() {
-    var dots = document.getElementById("dots");
+    var rules = document.getElementById("rules");
     var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
+    var btnText = document.getElementById("rulesBtn");
   
-    if (dots.style.display === "none") {
-      dots.style.display = "inline";
+    if (rules.style.display === "none") 
+    {
+      rules.style.display = "inline";
       btnText.innerHTML = "Read more";
       moreText.style.display = "none";
-    } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
+    } 
+    else 
+    {
+      rules.style.display = "none";
+      btnText.innerHTML = "Hide";
       moreText.style.display = "inline";
     }
   }
+// ------------------------dölja spelregler----------------------          
