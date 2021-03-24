@@ -1,3 +1,4 @@
+
 window.addEventListener("load", initSite);
 
 const params = new URLSearchParams(window.location.search);
@@ -7,54 +8,65 @@ let timeleft = 20;
 let guessButton = document.getElementById("guessNumberBtn");
 
 function initSite(){
-        testing(number)
+        gameMode(number)
         checkLogin();
 }
 
 
-  
+  // check if user is logged in and also set the username
 function checkLogin(){
     let loggedInUser = JSON.parse(localStorage.getItem("login"));
+    let usernameDiv = document.getElementById("username") 
     if(loggedInUser == null){
         location.replace("login.html");
+    }else if(loggedInUser !== null){
+        usernameDiv.innerHTML = loggedInUser
+        console.log(loggedInUser)
+        return loggedInUser
+      }
+}
+
+
+
+
+
+
+
+
+
+
+function gameMode(maxNumber){
+    //if the url is tampered automatically send back to index
+    if (maxNumber != 10 && maxNumber !=20 && maxNumber !=30) {
+        location.replace("index.html")
+        // else run/start the game
+    }else{
+        startGame()
+        let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+        let guessButton = document.getElementById("guessNumberBtn");
+        guessButton.addEventListener("click", ()=>{
+            
+            let inputNumber = document.getElementById("inputNumber").value;
+            checkAnswer(randomNumber, inputNumber);
+            if(maxNumber == 20){
+                botOne(maxNumber, randomNumber)
+            }
+            if(maxNumber == 30){
+                botOne(maxNumber, randomNumber)
+                botTwo(maxNumber, randomNumber)
+            }
+            
+        });
+       console.log("The right answer is: " + randomNumber)
+
     }
 }
 
 
+    
 
 
-
-
-
-
-
-
-function testing(maxNumber){
-    startGame()
-    let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
-    let guessButton = document.getElementById("guessNumberBtn");
-    guessButton.addEventListener("click", ()=>{
-        
-        let inputNumber = document.getElementById("inputNumber").value;
-        checkAnswer(randomNumber, inputNumber);
-        if(maxNumber == 20){
-            botOne(maxNumber, randomNumber)
-        }
-        if(maxNumber == 30){
-            botOne(maxNumber, randomNumber)
-            botTwo(maxNumber, randomNumber)
-        }
-        
-    });
-   console.log("The right answer is: " + randomNumber)
-}
-
-
-    /* Change location to game.html with window.location? */
-    /* setUrl(game.html?difficulty=easy) */
-
-
-// func for bot
+// func for bot 2 para maxNumber to set the limit and randomNumber is the Correct answer
 function botOne(maxNumber, randomNumber){
     
 
@@ -70,7 +82,7 @@ function botOne(maxNumber, randomNumber){
     
    
 }
-
+// func for bot 2 para maxNumber to set the limit and randomNumber is the Correct answer
 function botTwo(maxNumber, randomNumber){
     
 
@@ -95,33 +107,31 @@ function startGame(){
     
 }
 // function that checks if the input answer is correct
-function checkAnswer(random, input, botOneGuess, botTwoGuess){
+/**  correct = The correct answer | input = inputNumber from user | botOneGuess = botOneGuess | botTwoGuess = botTwoGuess */  
+function checkAnswer(correct, input, botOneGuess, botTwoGuess){
     let box = document.getElementById("botInfo");
     
     let inputNumber = input 
-    let randomNumber = random
+    let correctAnswer = correct
     let guessOneBot = botOneGuess
     let guessTwoBot = botTwoGuess
     
-    console.log("random nummer i checkanswer " + randomNumber);
-    console.log("inputnumber i checkanswer " + inputNumber);
     
-
     if(isNaN(inputNumber)){
         box.innerText = "You must choose a number!";
         inputNumber = " ";
         return
     }
-    if(inputNumber > randomNumber ){
+    if(inputNumber > correctAnswer ){
         box.innerText = "Lower!";
 
         /* let inputNumber = document.getElementById("inputNumber").value = " "; */
 
-    }if(inputNumber < randomNumber ){
+    }if(inputNumber < correctAnswer ){
         box.innerText = "Higher!";
         /* let inputNumber = document.getElementById("inputNumber").value = " "; */
     }
-    if(inputNumber == randomNumber){
+    if(inputNumber == correctAnswer){
 
         console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
         
@@ -131,7 +141,7 @@ function checkAnswer(random, input, botOneGuess, botTwoGuess){
         return box.innerText = "You won!!";
 
     }
-    if(guessOneBot == randomNumber){
+    if(guessOneBot == correctAnswer){
 
         console.log("%cBOT ONE WON!!!", "color: blue; font-size: 20px;");
         
@@ -140,7 +150,7 @@ function checkAnswer(random, input, botOneGuess, botTwoGuess){
         /* setTimeout(reloadToIndex, 10000); */
 
     }
-    if(guessTwoBot == randomNumber){
+    if(guessTwoBot == correctAnswer){
 
         console.log("%cBOT TWO WON!!!", "color: blue; font-size: 20px;");
         
@@ -150,11 +160,11 @@ function checkAnswer(random, input, botOneGuess, botTwoGuess){
 
     }
 }
-
+// func for the timer 
 function timer(){
     /* clearInterval(timeleft = 0) */
    
-    
+    //this has to be equal to timeleft
     timeBar.style = "--duration: 20"
    
       setInterval(function() {
