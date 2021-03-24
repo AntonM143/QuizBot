@@ -1,5 +1,4 @@
 
-
 window.addEventListener("load", startGame);
 let guessButton = document.getElementById("guessNumberBtn");
 
@@ -8,7 +7,6 @@ guessButton.addEventListener("click", () => {
     checkAnswer
     inputNumber.focus()
 });
-
 
 
 guessButton.addEventListener("click", checkAnswer);
@@ -51,12 +49,10 @@ function startGame(){
     const headlineText = document.createElement("h1")
     headlineText.innerText = "Start guessing!"
     box.append(headlineText)
-
     let inputNumber = document.getElementById("inputNumber").value = " ";
-
     timer()
-
 }
+
 function checkAnswer(){
     let box = document.getElementById("botInfo");
     let inputNumber = document.getElementById("inputNumber").value;
@@ -125,27 +121,30 @@ function checkAnswer(){
 
         option.append(headlineDiv,popupIcon,btnDiv)
 
-        exitBtn.addEventListener("click",reloadToIndex )
+        tryAgainBtn.addEventListener("click", () =>{
+            let box = document.getElementById("botInfo");
+            option.innerHTML = " "
+            popupBackground.style.display = "none"
+            box.innerHTML = " " 
+            location.reload() 
+            startGame()
+        })
 
+        exitBtn.addEventListener("click", reloadToIndex )
         popupBackground.append(option)
-
-
     }
 
 function timer(){
-    /* clearInterval(timeleft = 0) */
-   
     
-    timeBar.style = "--duration: 20"
+    /* clearInterval(timeleft = 0) */
+    timeBar.style = "--duration: 10"
    
       setInterval(function() {
           if (timeleft <= 0 ) { 
-              
               clearInterval(timeleft = 0)
-              timeBar.innerHTML = "GAME OVER"
+              
               setTimeout(reloadToIndex, 5000);
               return
-             
           }
           /* timeBar.innerHTML = timeleft */
           timeleft -= 1
