@@ -5,7 +5,14 @@ function initSite(){
 
     const name = params.get("difficulty");
         testing(name)
+        checkLogin();
     
+}
+function checkLogin(){
+    let loggedInUser = JSON.parse(localStorage.getItem("login"));
+    if(loggedInUser == null){
+        location.replace("login.html");
+    }
 }
 
 
