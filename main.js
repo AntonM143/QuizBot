@@ -1,6 +1,6 @@
 window.addEventListener("load", initSite);
 /* koppla till en logga ut knapp!! */
-let logoutButton = document.getElementById("????");
+let logoutButton = document.getElementById("signout");
 logoutButton.addEventListener("click", logout);
 function initSite(){
     checkLogin();
@@ -17,4 +17,5 @@ function logout(){
     let loggedInUser = JSON.parse(localStorage.getItem("login"));
     loggedInUser = null;
     localStorage.setItem("login", JSON.stringify(loggedInUser));
+    location.replace("login.html");
 }

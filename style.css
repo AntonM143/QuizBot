@@ -242,3 +242,15 @@ input:focus{
       transform: scaleX(0);
     }
   } 
+
+#signout{
+    align-self: flex-end;
+}
+.nav{
+	display: flex;
+	position: absolute;
+	justify-content: flex-end;
+	width: 100%;
+	align-items: center;
+	bottom: 0;
+}
