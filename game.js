@@ -1,35 +1,35 @@
 window.addEventListener("load", initSite);
 //let body = document.getElementById("body");
+const params = new URLSearchParams(window.location.search);
+const number = params.get("difficulty");
 function initSite(){
-    const params = new URLSearchParams(window.location.search);
-
-    const name = params.get("difficulty");
-        testing(name)
+        testing(number)
     
 }
-
-
-let mediumButton = document.getElementById("mediumButton")
-let hardButton = document.getElementById("hardButton")
-
+let timeleft = 20; 
 
 let guessButton = document.getElementById("guessNumberBtn");
 
 
 
-
-
-
-
-let timeleft = 20; 
 function testing(maxNumber){
     startGame()
     let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
     let guessButton = document.getElementById("guessNumberBtn");
     guessButton.addEventListener("click", ()=>{
-        checkAnswer(randomNumber);
+        
+        let inputNumber = document.getElementById("inputNumber").value;
+        checkAnswer(randomNumber, inputNumber);
+        if(maxNumber == 20){
+            botOne(maxNumber, randomNumber)
+        }
+        if(maxNumber == 30){
+            botOne(maxNumber, randomNumber)
+            botTwo(maxNumber, randomNumber)
+        }
+        
     });
-    console.log(randomNumber)
+   console.log("The right answer is: " + randomNumber)
 }
 
 
@@ -37,34 +37,37 @@ function testing(maxNumber){
     /* setUrl(game.html?difficulty=easy) */
 
 
+// func for bot
+function botOne(maxNumber, randomNumber){
+    
 
-/* function botOne(){
-    let divNumber = document.getElementById("botOne")
-    let maxNumber = 10;
-    let botOneNumber = Math.floor(Math.random() * maxNumber);
+    let guessBot = Math.floor(Math.random() * maxNumber) + 1;
+  
+    let divNumber = document.getElementById("botOneGuess")
+    
     divNumber.style.fontSize = "50px"
-    divNumber.innerHTML = "bot 1 gissning är " + " " + botOneNumber
-    console.log(botOneNumber)
+    divNumber.innerHTML = "bot 1 gissning är " + " " + guessBot
+    console.log("The bots 1 answer is: " +  guessBot)
+    
+    checkAnswer(randomNumber, null, guessBot )
+    
+   
 }
-botOne()
-function botTwo(){
-    let divNumber = document.getElementById("botTwo")
-    let maxNumber = 10;
-    let botOneNumber = Math.floor(Math.random() * maxNumber);
+
+function botTwo(maxNumber, randomNumber){
+    
+
+    let guessBot = Math.floor(Math.random() * maxNumber) + 1;
+  
+    let divNumber = document.getElementById("botTwoGuess")
+    
     divNumber.style.fontSize = "50px"
-    divNumber.innerHTML = "bot 2 gissning är " + " " + botOneNumber
-    console.log(botOneNumber)
+    divNumber.innerHTML = "bot 2 gissning är " + " " + guessBot
+    console.log("The bots 2 answer is: " +  guessBot)
+  
+    checkAnswer(randomNumber, null, null,guessBot  )
 }
-botTwo()
-function botThree(){
-    let divNumber = document.getElementById("botThree")
-    let maxNumber = 10;
-    let botOneNumber = Math.floor(Math.random() * maxNumber);
-    divNumber.style.fontSize = "50px"
-    divNumber.innerHTML = "bot 3 gissning är " + " " + botOneNumber
-    console.log(botOneNumber)
-}
-botThree() */
+//func that starts the game ( the timebar)
 function startGame(){
     console.log("%cTHE GAME WAS STARTED", "color: green; font-size: 20px;")
     let box = document.getElementById("botInfo");
@@ -74,37 +77,59 @@ function startGame(){
     timer()
     
 }
-
-function checkAnswer(random){
+// function that checks if the input answer is correct
+function checkAnswer(random, input, botOneGuess, botTwoGuess){
     let box = document.getElementById("botInfo");
-    let inputNumber = document.getElementById("inputNumber").value;
     
+    let inputNumber = input 
     let randomNumber = random
-   
-    console.log("The right answer is: " + randomNumber);
-    console.log("Your answer is: " + inputNumber);
+    let guessOneBot = botOneGuess
+    let guessTwoBot = botTwoGuess
+    
+    console.log("random nummer i checkanswer " + randomNumber);
+    console.log("inputnumber i checkanswer " + inputNumber);
+    
 
     if(isNaN(inputNumber)){
         box.innerText = "You must choose a number!";
         inputNumber = " ";
         return
     }
-    if(inputNumber > randomNumber){
+    if(inputNumber > randomNumber ){
         box.innerText = "Lower!";
 
         /* let inputNumber = document.getElementById("inputNumber").value = " "; */
 
-    }if(inputNumber < randomNumber){
+    }if(inputNumber < randomNumber ){
         box.innerText = "Higher!";
         /* let inputNumber = document.getElementById("inputNumber").value = " "; */
     }
     if(inputNumber == randomNumber){
 
-        box.innerText = "You won!!";
         console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
         
         timeBar.innerHTML = " "
-        setTimeout(reloadToIndex, 10000);
+        /* setTimeout(reloadToIndex, 10000); */
+        
+        return box.innerText = "You won!!";
+
+    }
+    if(guessOneBot == randomNumber){
+
+        console.log("%cBOT ONE WON!!!", "color: blue; font-size: 20px;");
+        
+        timeBar.innerHTML = " "
+        return box.innerText = "Bot one won!!";
+        /* setTimeout(reloadToIndex, 10000); */
+
+    }
+    if(guessTwoBot == randomNumber){
+
+        console.log("%cBOT TWO WON!!!", "color: blue; font-size: 20px;");
+        
+        timeBar.innerHTML = " "
+        return box.innerText = "Bot two won!!";
+        /* setTimeout(reloadToIndex, 10000); */
 
     }
 }
@@ -120,7 +145,7 @@ function timer(){
               
               clearInterval(timeleft = 0)
               timeBar.innerHTML = "GAME OVER"
-              setTimeout(reloadToIndex, 5000);
+              /* setTimeout(reloadToIndex, 5000); */
               return
              
           }
