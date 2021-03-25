@@ -90,7 +90,7 @@ header{
 .playerCard{
 	display: flex;
 	width: 40vw;
-	height: 150px;
+	height: 200px;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
@@ -185,8 +185,8 @@ a:hover, a:visited, a:link, a:active
 }
 h2 
 {
-	padding: 5px;
-	margin: 0;
+	padding: 0px;
+	margin-top: 20px;
 }
 
  input {
@@ -209,7 +209,6 @@ input:focus{
 	text-align: center;
 	font-family: 'Crimson Text', serif;
 	font-size: 20px;
-
 }
 .fineInfo{
 	font-size: 30px;
@@ -328,3 +327,89 @@ input:focus{
 	align-items: center;
 	bottom: 0;
 }
+
+
+
+
+/* ---------------------------------------mobile first regelsidan------------------------------------- */
+@media screen and (max-width: 800px) {
+	#easyBtn{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		width: 100px;
+		height: 50px;
+		background-color: green;
+		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+		color: #FFFF;
+		border-radius: 10px;
+		font-family: avenir next;
+		font-style: normal;
+		font-weight: bolder;
+		font-size: 1.3rem;
+	}
+	#mediumBtn{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		width: 100px;
+		height: 50px;
+		background-color:gold;
+		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+		color: #FFFF;
+		border-radius: 10px;
+		font-family: avenir next;
+		font-style: normal;
+		font-weight: bolder;
+		font-size: 1.3rem;
+	}
+	#hardBtn{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		width: 100px;
+		height: 50px;
+		background-color: #E60A13;
+		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+		color: #FFFF;
+		border-radius: 10px;
+		font-family: avenir next;
+		font-style: normal;
+		font-weight: bolder;
+		font-size: 1.3rem;
+	}
+	.rulesDiv{
+		text-align: center;
+		font-family: 'Crimson Text', serif;
+		font-size: 15px;
+	}
+	.ruleInfo{
+		font-family: 'Crimson Text', serif;
+	}
+	.botCard{
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		font-size: 20px
+	}
+	.playerCard{
+		display: flex;
+		width: 100vw;
+		height: auto;
+		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+		border-radius: 10px;
+	}
+h1{
+	font-size: 1.3rem;
+}
+h3{
+	font-size: 1.5rem;
+}
+p{
+	font-size: small;
+}
+  }
+/* ---------------------------------------mobile first regelsidan------------------------------------- */

@@ -9,6 +9,7 @@
     <script src="main.js" defer></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -17,14 +18,13 @@
         </div>
         <div class="nav">
             <button id="signout">Sign out</button>
-
         </div>
     </header>
 <main>
     <section>
         <div class="rulesDiv">
             <div class="ruleCard botCard playerCard">
-                <div class="ruleImg">
+                <div>
                     <i class="fas fa-robot"></i>
                 </div>
                     <div class="ruleInfo">
@@ -44,7 +44,9 @@
                     </div>
             </div> 
         </div>
-        <div class="textDif"><h2>Choose a difficulty</h2></div>
+        <div class="textDif">
+            <h2>Choose a difficulty</h2>
+        </div>
         <div class="difBtns">
             <a href="game.html?difficulty=10"><button id="easyBtn">Easy</button></a>
             <a href="game.html?difficulty=20"><button id="mediumBtn">Medium</button></a>
