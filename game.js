@@ -48,50 +48,62 @@ function gameMode(maxNumber){
         let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
         let guessButton = document.getElementById("guessNumberBtn");
         let inputPlayer = document.getElementById("inputPlayer")
-
-       
+        
+        
+        
         const display = ()=>{
             inputPlayer.style.display == "none" ? inputPlayer.style.display = "flex" : inputPlayer.style.display = "flex" 
         }
-
+        
         guessButton.addEventListener("click", ()=>{
             
+            let botContainer = document.getElementById("containerBot")
             let inputNumber = document.getElementById("inputNumber").value;
-
+            botContainer.innerHTML = ""
+            
             checkAnswer(randomNumber, inputNumber);
+
             if(maxNumber == 20){
                 inputPlayer.style.display = "none"
-                setTimeout(()=>{ display(), botOne(maxNumber, randomNumber)}, 3000)
                 
-
+                setTimeout(()=>{ display(), botOne(maxNumber, randomNumber)}, 1000)
+                
+                
             }
             if(maxNumber == 30){
                 inputPlayer.style.display = "none"
-                setTimeout(()=>{display(), botOne(maxNumber, randomNumber)}, 3000)
-                inputPlayer.style.display = "none"
-                setTimeout(()=>{display(), botTwo(maxNumber, randomNumber)}, 6000)
+
+                setTimeout(()=>{ botOne(maxNumber, randomNumber)}, 1000)
+                setTimeout(()=>{ display(),botTwo(maxNumber, randomNumber)}, 2000)
+                
+               
             }
             
         });
-       console.log("The right answer is: " + randomNumber)
-
+        console.log("The right answer is: " + randomNumber)
+        
     }
 }
 
 
-    
+
 
 
 // func for bot 2 para maxNumber to set the limit and randomNumber is the Correct answer
 function botOne(maxNumber, randomNumber){
+    let divNumber = document.createElement("div")
+    let botContainer = document.getElementById("containerBot")
     
-
     let guessBot = Math.floor(Math.random() * maxNumber) + 1;
-  
-    let divNumber = document.getElementById("botOneGuess")
     
-    divNumber.style.fontSize = "50px"
+ 
+    divNumber.className = "playerCard"
+    
+    divNumber.innerHTML = " "
     divNumber.innerHTML = "bot 1 gissning är " + " " + guessBot
+    
+    botContainer.append(divNumber)
+
     console.log("The bots 1 answer is: " +  guessBot)
     
     checkAnswer(randomNumber, null, guessBot)
@@ -101,17 +113,20 @@ function botOne(maxNumber, randomNumber){
 // func for bot 2 para maxNumber to set the limit and randomNumber is the Correct answer
 function botTwo(maxNumber, randomNumber){
     
+    let botContainer = document.getElementById("containerBot")
+    let divNumber = document.createElement("div")
 
     let guessBot = Math.floor(Math.random() * maxNumber) + 1;
-  
-    let divNumber = document.getElementById("botTwoGuess")
+
+
+    divNumber.className = "playerCard"
     
-    divNumber.style.fontSize = "50px"
     divNumber.innerHTML = "bot 2 gissning är " + " " + guessBot
     console.log("The bots 2 answer is: " +  guessBot)
-  
+    botContainer.append(divNumber)
     checkAnswer(randomNumber, null, null,guessBot)
 }
+
 //func that starts the game ( the timebar)
 function startGame(){
     console.log("%cTHE GAME WAS STARTED", "color: green; font-size: 20px;")
@@ -125,11 +140,13 @@ function startGame(){
     timer()
     
 }
+
 // function that checks if the input answer is correct
 /**  correct = The correct answer | input = inputNumber from user | botOneGuess = botOneGuess | botTwoGuess = botTwoGuess */  
 function checkAnswer(correct, input, botOneGuess, botTwoGuess){
     let box = document.getElementById("botInfo");
-    
+    let headlineText = document.createElement("h1")
+    const iconDiv = document.createElement("div")
     let inputNumber = input 
     let correctAnswer = correct
     let guessOneBot = botOneGuess
@@ -145,7 +162,7 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
 
     
 
-    if(inputNumber > CorrectAnswer){
+    if(inputNumber > correctAnswer){
         box.innerHTML = " "
         headlineText.innerText = "Lower!"
         iconDiv.className = "fas fa-arrow-down"
@@ -179,7 +196,11 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
     if(guessOneBot == correctAnswer){
 
         console.log("%cBOT ONE WON!!!", "color: blue; font-size: 20px;");
+        headlineText.innerText = "BOT ONE WON!"
+        box.append(headlineText)
         
+        setTimeout(console.log("game over"), 10000);
+        popup()
         timeBar.innerHTML = " "
         return box.innerText = "Bot one won!!";
         /* setTimeout(reloadToIndex, 10000); */
@@ -190,7 +211,11 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
 
 
         console.log("%cBOT TWO WON!!!", "color: blue; font-size: 20px;");
-        
+        headlineText.innerText = "BOT TWO WON!"
+        box.append(headlineText)
+
+        setTimeout(console.log("game over"), 10000);
+        popup()
         timeBar.innerHTML = " "
         return box.innerText = "Bot two won!!";
         /* setTimeout(reloadToIndex, 10000); */
@@ -201,15 +226,11 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
 
 function timer(){
     
-    /* clearInterval(timeleft = 0) */
-    timeBar.style = "--duration: 20"
-
-      const interval = setInterval(function() {
 
     //this has to be equal to timeleft
     timeBar.style = "--duration: 20"
    
-      setInterval(function() {
+    const interval = setInterval(function() {
              if (timeleft <= 0 ) { 
             clearInterval(interval)
             popup()
@@ -220,7 +241,8 @@ function timer(){
           timeleft -= 1
 
         }, 1000);
-  }
+  
+}
 
 function reloadToIndex(){
     location.href = "../index.html"
