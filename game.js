@@ -109,9 +109,15 @@ function checkAnswer(){
 
         popupBackground.style.display = "block"
     
-        headlineText.innerText = "You win!"
-        headlineDiv.append(headlineText)
-        popupIcon.className = "fas fa-medal"
+        if(timeleft == 0){
+            headlineText.innerText = "You lose!"
+            headlineDiv.append(headlineText)
+            popupIcon.className = "fas fa-sad-cry"
+        }else{
+            headlineText.innerText = "You win!"
+            headlineDiv.append(headlineText)
+            popupIcon.className = "fas fa-medal"
+        }
 
         tryAgainBtn.className = "defaultBtn"
         exitBtn.className = "defaultBtn"
@@ -121,6 +127,7 @@ function checkAnswer(){
         btnDiv.append(tryAgainBtn,exitBtn)
 
         option.append(headlineDiv,popupIcon,btnDiv)
+
 
         tryAgainBtn.addEventListener("click", () =>{
             let box = document.getElementById("botInfo");
@@ -138,18 +145,25 @@ function checkAnswer(){
 function timer(){
     
     /* clearInterval(timeleft = 0) */
-    timeBar.style = "--duration: 10"
+    timeBar.style = "--duration: 20"
+
    
-      setInterval(function() {
-          if (timeleft <= 0 ) { 
-              clearInterval(timeleft = 0)
-              return
-          }
+    
+   
+      const interval = setInterval(function() {
           /* timeBar.innerHTML = timeleft */
           timeleft -= 1
-      }, 1000);
+
+          if (timeleft <= 0 ) { 
+            clearInterval(interval)
+            popup()
+            return 
+            }
+
+
+        }, 1000);
+        
      
-      
 }
 function reloadToIndex(){
     location.href = "../index.html"
