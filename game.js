@@ -47,16 +47,29 @@ function gameMode(maxNumber){
         startGame()
         let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
         let guessButton = document.getElementById("guessNumberBtn");
+        let inputPlayer = document.getElementById("inputPlayer")
+
+       
+        const display = ()=>{
+            inputPlayer.style.display == "none" ? inputPlayer.style.display = "flex" : inputPlayer.style.display = "flex" 
+        }
+
         guessButton.addEventListener("click", ()=>{
             
             let inputNumber = document.getElementById("inputNumber").value;
+
             checkAnswer(randomNumber, inputNumber);
             if(maxNumber == 20){
-                botOne(maxNumber, randomNumber)
+                inputPlayer.style.display = "none"
+                setTimeout(()=>{ display(), botOne(maxNumber, randomNumber)}, 3000)
+                
+
             }
             if(maxNumber == 30){
-                botOne(maxNumber, randomNumber)
-                botTwo(maxNumber, randomNumber)
+                inputPlayer.style.display = "none"
+                setTimeout(()=>{display(), botOne(maxNumber, randomNumber)}, 3000)
+                inputPlayer.style.display = "none"
+                setTimeout(()=>{display(), botTwo(maxNumber, randomNumber)}, 6000)
             }
             
         });
@@ -81,7 +94,7 @@ function botOne(maxNumber, randomNumber){
     divNumber.innerHTML = "bot 1 gissning är " + " " + guessBot
     console.log("The bots 1 answer is: " +  guessBot)
     
-    checkAnswer(randomNumber, null, guessBot )
+    checkAnswer(randomNumber, null, guessBot)
     
    
 }
@@ -97,7 +110,7 @@ function botTwo(maxNumber, randomNumber){
     divNumber.innerHTML = "bot 2 gissning är " + " " + guessBot
     console.log("The bots 2 answer is: " +  guessBot)
   
-    checkAnswer(randomNumber, null, null,guessBot  )
+    checkAnswer(randomNumber, null, null,guessBot)
 }
 //func that starts the game ( the timebar)
 function startGame(){
