@@ -7,8 +7,10 @@ main{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+
 	margin-top: 30vh;
 	z-index: 1;
+
 }
 
 body{
@@ -19,7 +21,6 @@ body{
 header{
 	display: flex;
 	justify-content: center;
-	position: fixed;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
 	top:0;
 	left:0;
@@ -31,42 +32,67 @@ header{
 .brand{
 	display: flex;
 	justify-content: center;
+	max-width: 100%;
 }
 
 .brandImg{
 	display: flex;
 	height: 100%;
-	width: auto;
 }
 
 .gameContainer{
 	display: flex;
 	flex-direction: column;
-	height: 750px;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
-	width:75%;
+	width:100%;
 }
 
-/* .botImg{
-
-} */
 .fa-robot{
 	font-size: 100px;
 	color:#E60A13;
 }
+
+.botImg{
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	flex:1
+}
+
 .botInfo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
 	font-family: lores-12,sans-serif;
 	font-size: 40px;
 	font-weight: 700;
 	font-style: normal;
+	font-size: 50px;
 	color: #484848;
+	white-space: nowrap;
+	flex:3
 }
+
+.fa-arrow-down{
+	color: #E60A13;
+	margin: 10px;
+	animation: bounce2 2s ease infinite;
+}
+
+.fa-arrow-up{
+	color: #E60A13;
+	margin: 10px;
+	animation: bounce2 2s ease infinite;
+}
+
 .botCard{
-	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
+	
 }
+
 .botDiv{
 	display: flex;
 	justify-content: center;
@@ -85,14 +111,15 @@ header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex:2
-	
+
+	flex:2;
 }
 
 .playerCard{
 	display: flex;
-	width: 40vw;
-	height: 200px;
+	margin: 20px;
+	width: 100%;
+	height: 150px;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
@@ -207,19 +234,17 @@ h2
 input:focus{
 	outline: 0;
 }
+
 .rulesDiv{
 	text-align: center;
 	font-family: 'Crimson Text', serif;
 	font-size: 20px;
 }
-.fineInfo{
-	font-size: 30px;
-}
-
 
 .fineInfo{
 	font-size: 30px;
 }
+
 .ruleCard{
 	display: flex;
 	width: 80vw;
@@ -227,15 +252,18 @@ input:focus{
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
+
 .ruleInfo{
 	font-family: 'Crimson Text', serif;
 }
+
 .defaultBtn{
 	display:flex;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-	width: 175px;
+	margin: 5px;
+	width: 50%;
 	height: 50px;
 	background-color: #E60A13;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
@@ -244,8 +272,15 @@ input:focus{
 	font-family: avenir next;
 	font-style: normal;
 	font-weight: bolder;
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
+
+
+/* .defaultBtn:hover{
+	width:55%
+
+}
+
 
 
 .defaultBtn:hover{
@@ -260,7 +295,6 @@ input:focus{
 /* .botCard{
 
 } */
-
 .startButton {
 	box-shadow:inset 0px 1px 0px 0px #f29c93;
 	background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
@@ -277,6 +311,7 @@ input:focus{
 	text-decoration:none;
 	text-shadow:0px 1px 0px #b23e35;
     margin: 30px;
+
 }
 .startButton:hover {
 	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
@@ -299,9 +334,9 @@ input:focus{
     margin: 1rem;
     overflow: hidden;
     width: 50%;
-	text-align: center;
-    
+	text-align: center; 
   }
+
   #timeBarChild {
     height: 20px;
     border-radius:6px;
@@ -309,6 +344,69 @@ input:focus{
     transform-origin: left center;
     background: linear-gradient(to bottom, red, #900);
   }
+
+
+	.bounce2 {
+		animation: bounce2 2s ease infinite;
+	}
+
+	#popup{
+    display: flex;
+    left: 0;
+    right: 0;
+		border-radius: 5px;
+    flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+    background-color:#FFFF;
+    z-index: 99;
+    margin: 15% auto; 
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+    max-width: 70%; 
+    padding: 0.5rem;
+	}
+
+	#popupBackground{
+    display: none; 
+    position: fixed; 
+    z-index: 98; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    backdrop-filter:blur(3px);
+    background-color:rgba(0, 0, 0, 0.19);
+	}
+
+	.headlinePopup{
+		font-family: lores-12,sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		color: #484848;
+	}
+
+	#popupIcon{
+		display: flex;
+		justify-content: center;
+		margin: 10px;
+		font-size: 5rem;
+		color: #E60A13;
+	}
+
+	.btnDiv{
+		display: flex;
+		justify-content: space-around;
+		margin: 5px;
+		width: 100%;
+	}
+
+
+	@keyframes bounce2 {
+		0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+		40% {transform: translateY(-30px);}
+		60% {transform: translateY(-15px);}
+	}
+
 
   
   @keyframes roundtime {
@@ -318,8 +416,46 @@ input:focus{
     }
   } 
 
+
+	@media only screen and (max-width: 800px) {
+		.botInfo{
+			font-size: 5vw;
+		}
+
+		#popup{
+			max-width: 100%; 
+		
+		}
+
+		.defaultBtn{
+			font-size: 1em;
+		}
+
+		.fa-robot{
+			font-size: 16vw;
+			color:#E60A13;
+		}
+	}
+
+
 #signout{
     align-self: flex-end;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 100px;
+	height: 25px;
+	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 20px;
+	border:1px solid #d83526;
+	cursor: pointer;
 }
 .nav{
 	display: flex;
@@ -434,3 +570,4 @@ p{
 }
   }
 /* ---------------------------------------mobile first regelsidan------------------------------------- */
+=======

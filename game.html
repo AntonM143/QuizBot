@@ -5,37 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizApp</title>
-    <script src="game.js" defer></script>
+    <script src="game.js" defer ></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/ydb2bnu.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 </head>
 <body>
+
     <header>
             <div class="brand">
                 <img class="brandImg" src="/assets/quizbot1.png" alt="">
             </div>
     </header>
     <main>
-        <section class="gameContainer">
+
+        <div id="popupBackground">
+            <div id="popup"></div>
+        </div>
+        <div class="divTest">
+            <section class="gameContainer">
                 <div class="botDiv">
                     <div class="botCard playerCard">
                         <div class="botImg">
                             <i class="fas fa-robot"></i></div>
-
-                        <div id="botInfo" class="botInfo"></div>
-
+                            
+                            <div id="botInfo" class="botInfo"></div>
+                            
+                        </div>
                     </div>
-                </div>
-                <div class="timerDiv">
-                    <div id="timeBar"  >
-                        <div id="timeBarChild"></div>
+                    <div class="timerDiv">
+                        <div id="timeBar"  >
+                            <div id="timeBarChild"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="playerDiv">
-                    <div class="playerCard">
-                        <div class="profileInfo">                          
+                    <div class="playerDiv">
+                        <div class="playerCard">
+                            <div class="profileInfo">                          
                                 <img class="profileImg" src="/assets/user_robot.png" alt="">
+
                             <div id="username"></div>
                         </div>
 
@@ -43,14 +50,14 @@
 
                             <input id="inputNumber" autofocus type="text">
                             <div id="guessNumberBtn" class="defaultBtn">GO &rsaquo;</div>
-                        </div>
-                        <div>
-                            <div id="botOneGuess"></div>
-                            <div id="botTwoGuess"></div>
+
                         </div>
                     </div>
+                    
                 </div>
+                <div class="playerDiv" id="containerBot"></div>
         </section>
+
     </main>
 
 </body>
