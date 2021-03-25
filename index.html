@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizApp</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
 </head>
@@ -15,7 +15,11 @@
         <div class="brand">
             <img class="brandImg" src="/assets/quizbot1.png" alt="">
         </div>
-</header>
+        <div class="nav">
+            <button id="signout">Sign out</button>
+
+        </div>
+    </header>
 <main>
     <section>
         <div class="rulesDiv">
@@ -23,22 +27,33 @@
                 <div class="ruleImg">
                     <i class="fas fa-robot"></i>
                 </div>
-                <div class="ruleInfo">
-                <h1>Hey and welcome to QuizBot.</h1>
-                <h1>Your unfriendly time killer.</h1>
-                <h1>Got some time to spare?</h1>
-                <h1>Then this Bot will probably use the majority of that time.</h1>
-                <div class="fineInfo">
-                    The game is simple, you’re battling against time versus our bot to guess what number he chose. 
-                    At the start of the game the bot has already decided a number and you’ve got, depending on your difficulty, a timer to beat.
-                    First of all you need to register your own account to keep track on your high score and also be able to see other players rankings. Secondly, you’re prompted to chose what difficulty you’d like to play at. 
-                    Also there’s an option where you can choose how many other you want to battle against, first to guess the QuizBots number wins.
-                </div>
-            </div>
+                    <div class="ruleInfo">
+                        <h1>Hey and welcome to QuizBot.</h1>
+                        <h1>Your unfriendly time killer.</h1>
+                        <h1>Got some time to spare?</h1>
+                        <h1>Then this Bot will probably use the majority of that time.</h1>
+                            <p><span id="rules"><h3><br>Press to read rules<br>⬇</h3></span>
+                                <span id="more">Game is simple, you’re battling against time versus our bot to guess what number he chose. 
+                                At the start of the game the bot has already decided a number and you’ve got, depending on your difficulty, a timer to beat.
+                                First of all you need to register your own account to keep track on your high score and also be able to see other players rankings. 
+                                Secondly, you’re prompted to chose what difficulty you’d like to play at. 
+                                Also there’s an option where you can choose how many other you want to battle against, first to guess the QuizBots number wins.
+                                </span>
+                            </p>
+                            <button onclick="myFunction()" id="rulesBtn">Read more</button>
+                    </div>
+            </div> 
         </div>
-    <a class="startButton" href="game.html">Start Game</a>
-</section>
+        <div class="textDif"><h2>Choose a difficulty</h2></div>
+        <div class="difBtns">
+            <a href="game.html?difficulty=10"><button id="easyBtn">Easy</button></a>
+            <a href="game.html?difficulty=20"><button id="mediumBtn">Medium</button></a>
+            <a href="game.html?difficulty=30"><button id="hardBtn">Hard</button></a>
+        </div>
+
+    </section>
 
 </body>
 </main>
+<script src="main.js"></script>
 </html>

@@ -62,6 +62,7 @@ header{
 	align-items: center;
 	margin: 10px;
 	font-family: lores-12,sans-serif;
+	font-size: 40px;
 	font-weight: 700;
 	font-style: normal;
 	font-size: 50px;
@@ -106,6 +107,7 @@ header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	flex:2;
 }
 
@@ -137,6 +139,79 @@ header{
 	align-items: center;
 	justify-content: space-around;
 	flex: 1;
+}
+.difBtns{
+	display: flex;
+	justify-content: space-around;
+	}
+/* ---------------------------tar bort understreck från A herf-----------------------------------------	 */
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+/* ---------------------------tar bort understreck från A herf-----------------------------------------	 */
+#easyBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 175px;
+	height: 50px;
+	background-color: green;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 2.5rem;
+}
+#mediumBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 175px;
+	height: 50px;
+	background-color:gold;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 2.5rem;
+}
+#hardBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 175px;
+	height: 50px;
+	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 2.5rem;
+}
+
+#more {
+	display: none;
+}
+.textDif{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+h2 
+{
+	padding: 5px;
+	margin: 0;
 }
 
  input {
@@ -196,6 +271,7 @@ input:focus{
 	font-size: 2rem;
 }
 
+
 /* .defaultBtn:hover{
 	width:55%
 
@@ -204,6 +280,7 @@ input:focus{
 .defaultBtn:active{
 	width:45%
 } */
+
 
 .startButton {
 	box-shadow:inset 0px 1px 0px 0px #f29c93;
@@ -215,12 +292,13 @@ input:focus{
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:70px;
 	font-weight:bold;
-	padding:6px 24px;
+	padding:30px 60px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #b23e35;
-  margin: 5px;
+    margin: 30px;
+
 }
 .startButton:hover {
 	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
@@ -253,6 +331,7 @@ input:focus{
     transform-origin: left center;
     background: linear-gradient(to bottom, red, #900);
   }
+
 
 	.bounce2 {
 		animation: bounce2 2s ease infinite;
@@ -315,6 +394,7 @@ input:focus{
 		60% {transform: translateY(-15px);}
 	}
 
+
   
   @keyframes roundtime {
     to {
@@ -322,6 +402,7 @@ input:focus{
       transform: scaleX(0);
     }
   } 
+
 
 	@media only screen and (max-width: 800px) {
 		.botInfo{
@@ -343,3 +424,31 @@ input:focus{
 		}
 	}
 
+
+#signout{
+    align-self: flex-end;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 100px;
+	height: 25px;
+	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 20px;
+	border:1px solid #d83526;
+	cursor: pointer;
+}
+.nav{
+	display: flex;
+	position: absolute;
+	justify-content: flex-end;
+	width: 100%;
+	align-items: center;
+	bottom: 0;
+}
