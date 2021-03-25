@@ -305,6 +305,22 @@ input:focus{
 
 #signout{
     align-self: flex-end;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 100px;
+	height: 25px;
+	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 20px;
+	border:1px solid #d83526;
+	cursor: pointer;
 }
 .nav{
 	display: flex;
