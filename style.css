@@ -289,14 +289,9 @@ input:focus{
 	font-size: 2rem;
 }
 
-
 /* .defaultBtn:hover{
 	width:55%
-
 }
-
-
-
 .defaultBtn:hover{
 	width: 180px;
 	height: 55px;
@@ -307,7 +302,6 @@ input:focus{
 }
 
 /* .botCard{
-
 } */
 .startButton {
 	box-shadow:inset 0px 1px 0px 0px #f29c93;
