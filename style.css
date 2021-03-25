@@ -220,7 +220,7 @@ input:focus{
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #b23e35;
-    margin: 5px;
+  margin: 5px;
 }
 .startButton:hover {
 	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
@@ -262,16 +262,16 @@ input:focus{
     display: flex;
     left: 0;
     right: 0;
-		border-radius: 10px;
+		border-radius: 5px;
     flex-direction: column;
-		justify-content: space-around;
+		align-items: center;
+		justify-content: space-between;
     background-color:#FFFF;
     z-index: 99;
-    margin: 8% auto; 
+    margin: 15% auto; 
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
-    min-width: 100%; 
+    max-width: 70%; 
     padding: 0.5rem;
-    animation: animatezoom 0.6s
 	}
 
 	#popupBackground{
@@ -286,9 +286,17 @@ input:focus{
     background-color:rgba(0, 0, 0, 0.19);
 	}
 
+	.headlinePopup{
+		font-family: lores-12,sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		color: #484848;
+	}
+
 	#popupIcon{
 		display: flex;
 		justify-content: center;
+		margin: 10px;
 		font-size: 5rem;
 		color: #E60A13;
 	}
@@ -296,6 +304,8 @@ input:focus{
 	.btnDiv{
 		display: flex;
 		justify-content: space-around;
+		margin: 5px;
+		width: 100%;
 	}
 
 
@@ -318,8 +328,18 @@ input:focus{
 			font-size: 5vw;
 		}
 
+		#popup{
+			max-width: 100%; 
+		
+		}
+
+		.defaultBtn{
+			font-size: 1em;
+		}
+
 		.fa-robot{
 			font-size: 16vw;
 			color:#E60A13;
 		}
 	}
+

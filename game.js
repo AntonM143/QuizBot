@@ -95,6 +95,7 @@ function checkAnswer(){
 
     function popup(){
         const headlineDiv = document.createElement("div")
+        headlineDiv.className = "headlinePopup"
         const headlineText = document.createElement("h1")
         const popupIcon = document.createElement("div")
         popupIcon.id = "popupIcon"
@@ -114,7 +115,7 @@ function checkAnswer(){
 
         tryAgainBtn.className = "defaultBtn"
         exitBtn.className = "defaultBtn"
-        tryAgainBtn.innerText = "again!"
+        tryAgainBtn.innerText = "Play again!"
         exitBtn.innerText = "Exit"
 
         btnDiv.append(tryAgainBtn,exitBtn)
@@ -142,14 +143,13 @@ function timer(){
       setInterval(function() {
           if (timeleft <= 0 ) { 
               clearInterval(timeleft = 0)
-              
-              setTimeout(reloadToIndex, 5000);
               return
           }
           /* timeBar.innerHTML = timeleft */
           timeleft -= 1
       }, 1000);
      
+      
 }
 function reloadToIndex(){
     location.href = "../index.html"
