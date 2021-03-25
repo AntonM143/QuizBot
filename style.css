@@ -8,7 +8,7 @@ main{
 	align-items: center;
 	flex-direction: column;
 
-	margin-top: 30vh;
+	margin-top: 10vh;
 	z-index: 1;
 
 }
@@ -247,6 +247,7 @@ input:focus{
 
 .ruleCard{
 	display: flex;
+	flex-direction: column;
 	width: 80vw;
 	height: 550px;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
@@ -570,4 +571,4 @@ p{
 }
   }
 /* ---------------------------------------mobile first regelsidan------------------------------------- */
-=======
+
