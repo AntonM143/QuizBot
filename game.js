@@ -58,11 +58,11 @@ function gameMode(maxNumber){
         guessButton.addEventListener("click", ()=>{
             
             let botContainer = document.getElementById("containerBot")
-            let inputNumber = document.getElementById("inputNumber").value;
+            let inputNumber = document.getElementById("inputNumber").value
+            
             botContainer.innerHTML = ""
             
-            checkAnswer(randomNumber, inputNumber);
-
+            
             if(maxNumber == 20){
                 inputPlayer.style.display = "none"
                 
@@ -72,12 +72,17 @@ function gameMode(maxNumber){
             }
             if(maxNumber == 30){
                 inputPlayer.style.display = "none"
-
-                setTimeout(()=>{ botOne(maxNumber, randomNumber)}, 0)
-                setTimeout(()=>{ display(),botTwo(maxNumber, randomNumber)}, 500)
                 
-               
+                setTimeout(()=>{ botOne(maxNumber, randomNumber)}, 1000)
+                setTimeout(()=>{ display(),botTwo(maxNumber, randomNumber)}, 2000)
+                
+                
+            }else{
+                
+                
+                //hehe
             }
+            checkAnswer(randomNumber, inputNumber);
             
         });
         console.log("The right answer is: " + randomNumber)
