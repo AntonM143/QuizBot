@@ -435,9 +435,8 @@ input:focus{
 	display: flex;
 	position: absolute;
 	justify-content: flex-end;
-	width: 100%;
 	align-items: center;
-	bottom: 0;
+	top: 0px;
 }
 #signout{
 	display:flex;
@@ -467,7 +466,7 @@ input:focus{
 		justify-content: center;
 		align-items: center;
 		align-content: center;
-		width: 100px;
+		width: 90px;
 		height: 50px;
 		background-color: green;
 		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
@@ -483,7 +482,7 @@ input:focus{
 		justify-content: center;
 		align-items: center;
 		align-content: center;
-		width: 100px;
+		width: 90px;
 		height: 50px;
 		background-color:gold;
 		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
@@ -499,7 +498,7 @@ input:focus{
 		justify-content: center;
 		align-items: center;
 		align-content: center;
-		width: 100px;
+		width: 90px;
 		height: 50px;
 		background-color: #E60A13;
 		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
@@ -530,6 +529,13 @@ input:focus{
 		height: auto;
 		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 		border-radius: 10px;
+	}
+	.nav{
+		display: flex;
+		position: absolute;
+		justify-content: flex-end;
+		align-items: center;
+		top: 0;
 	}
 h1{
 	font-size: 1.3rem;
