@@ -73,8 +73,8 @@ function gameMode(maxNumber){
             if(maxNumber == 30){
                 inputPlayer.style.display = "none"
 
-                setTimeout(()=>{ botOne(maxNumber, randomNumber)}, 1000)
-                setTimeout(()=>{ display(),botTwo(maxNumber, randomNumber)}, 2000)
+                setTimeout(()=>{ botOne(maxNumber, randomNumber)}, 0)
+                setTimeout(()=>{ display(),botTwo(maxNumber, randomNumber)}, 500)
                 
                
             }
@@ -153,54 +153,62 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
     let guessTwoBot = botTwoGuess
     
     
+    if(inputNumber !=null){
 
-    if(isNaN(inputNumber)){
-        headlineText.innerText = "Select a number!"
-        box.append(headlineText)
-        return
-    }
-
+        if(isNaN(inputNumber)){
+            headlineText.innerText = "Select a number!"
+            box.append(headlineText)
+            return
+        }
     
-
-    if(inputNumber > correctAnswer){
-        box.innerHTML = " "
-        headlineText.innerText = "Lower!"
-        iconDiv.className = "fas fa-arrow-down"
-        box.append(headlineText, iconDiv)
-
-
-    }if(inputNumber < correctAnswer){
-        box.innerHTML = " "
-        headlineText.innerText = "Higher!"
-        iconDiv.className = "fas fa-arrow-up"
-        box.append(headlineText, iconDiv)
-    }
-
-    if(inputNumber == correctAnswer){
-
-        box.innerHTML = " "
-        headlineText.innerText = "WIN!"
-        box.append(headlineText)
-
-        console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
-        timeBar.innerHTML = " "
-
-        setTimeout(console.log("game over"), 10000);
-        popup()
-
-        /* setTimeout(reloadToIndex, 10000); */
         
-        return box.innerText = "You won!!";
+    
+        if(inputNumber > correctAnswer){
+            box.innerHTML = " "
+            headlineText.innerText = "Lower!"
+            iconDiv.className = "fas fa-arrow-down"
+            box.append(headlineText, iconDiv)
+    
+    
+        }if(inputNumber < correctAnswer){
+            box.innerHTML = " "
+            headlineText.innerText = "Higher!"
+            iconDiv.className = "fas fa-arrow-up"
+            box.append(headlineText, iconDiv)
+        }
+    
+        if(inputNumber == correctAnswer){
+            const wins = "PLAYER_WON"
+    
+            box.innerHTML = " "
+            headlineText.innerText = "WIN!"
+            box.append(headlineText)
+    
+            console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
+            
+            
+            timeleft = -1
+            /* setTimeout(console.log("game over"), 10000); */
+            popup(wins)
+    
+            /* setTimeout(reloadToIndex, 10000); */
+            
+            return box.innerText = "You won!!";
+    
+        }
 
     }
+
     if(guessOneBot == correctAnswer){
+        const wins = "Bot one won"
 
         console.log("%cBOT ONE WON!!!", "color: blue; font-size: 20px;");
         headlineText.innerText = "BOT ONE WON!"
         box.append(headlineText)
         
-        setTimeout(console.log("game over"), 10000);
-        popup()
+        timeleft = -1
+        
+        setTimeout(()=>{popup(wins, timeleft)},1000)
         timeBar.innerHTML = " "
         return box.innerText = "Bot one won!!";
         /* setTimeout(reloadToIndex, 10000); */
@@ -208,14 +216,15 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
 
     }
     if(guessTwoBot == correctAnswer){
-
+        const wins = "Bot two won"
 
         console.log("%cBOT TWO WON!!!", "color: blue; font-size: 20px;");
         headlineText.innerText = "BOT TWO WON!"
         box.append(headlineText)
 
-        setTimeout(console.log("game over"), 10000);
-        popup()
+        timeleft = -1
+        
+        setTimeout(()=>{popup(wins, timeleft)},1000)
         timeBar.innerHTML = " "
         return box.innerText = "Bot two won!!";
         /* setTimeout(reloadToIndex, 10000); */
@@ -231,9 +240,10 @@ function timer(){
     timeBar.style = "--duration: 20"
    
     const interval = setInterval(function() {
-             if (timeleft <= 0 ) { 
+             if (timeleft === 0 ) { 
             clearInterval(interval)
-            popup()
+            popup(null,timeleft)
+            console.log(timeleft)
             return 
             }
              
@@ -249,7 +259,7 @@ function reloadToIndex(){
 }
 
   
-  function popup(){
+  function popup(wins, timeleft){
         const headlineDiv = document.createElement("div")
         headlineDiv.className = "headlinePopup"
         const headlineText = document.createElement("h1")
@@ -264,17 +274,37 @@ function reloadToIndex(){
         const option = document.getElementById("popup")
 
         popupBackground.style.display = "block"
-    
-        if(timeleft == 0){
+        console.log(wins)
+        //checks if the time is = 0
+        if(timeleft === 0 ){
+            console.log("vad fan tiden gick ut")
             headlineText.innerText = "You lose!"
             headlineDiv.append(headlineText)
-            popupIcon.className = "fas fa-sad-cry"
-        }else{
-            headlineText.innerText = "You win!"
-            headlineDiv.append(headlineText)
-            popupIcon.className = "fas fa-medal"
-        }
+            popupIcon.className = "fas fa-sad-cry"  
 
+        }
+        //checks who won
+        if(wins === "Bot one won" || wins === "Bot two won" || wins === "PLAYER_WON"){
+            popupIcon.className = "fas fa-sad-cry" 
+
+            if (wins === "Bot one won") {
+                headlineText.innerText = wins + "....... You lose!"
+                /* headlineText.innerText = "Bot One Won......You lose!" */
+                
+            }if(wins === "Bot two won"){
+                headlineText.innerText = wins + "....... You lose!"
+                
+            }if (wins === "PLAYER_WON"){
+                headlineText.innerText = "You win!"
+                popupIcon.className = "fas fa-medal"
+                
+            }
+            headlineDiv.append(headlineText)
+        }
+        
+        
+        
+       
         tryAgainBtn.className = "defaultBtn"
         exitBtn.className = "defaultBtn"
         tryAgainBtn.innerText = "Play again!"
