@@ -158,7 +158,7 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
     let guessTwoBot = botTwoGuess
     
     
-    if(inputNumber !=null){
+    if(inputNumber !=null) {
 
         if(isNaN(inputNumber)){
             headlineText.innerText = "Select a number!"
@@ -258,6 +258,8 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
             resultList.push(player);
             localStorage.setItem("result", JSON.stringify(resultList));
         }
+    }
+}
         /* setTimeout(reloadToIndex, 10000); */
 
 
@@ -517,5 +519,3 @@ function reloadToIndex(){
         exitBtn.addEventListener("click", reloadToIndex )
         popupBackground.append(option)
     }
-
-
