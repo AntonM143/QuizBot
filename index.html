@@ -9,6 +9,7 @@
     <script src="main.js" defer></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -23,14 +24,17 @@
     <section>
         <div class="rulesDiv">
             <div class="ruleCard ruleCard1">
-                <div class="ruleImg">
-                    <i class="fas fa-robot"></i>
+                <div class="ruleImg"> 
                 </div>
                     <div class="ruleInfo">
+                        <div class="ruleInfo2">
+                        <div class="cogWheel"><i class="fas fa-cog"><h1>Your unfriendly time killer.</h1></i></div>
+                        <div class="timeBot"><i class="fas fa-user-clock"><h1>Got some time to spare?</h1></i>
+                        </div>
+                        <div class="wasteBot"><i class="fas fa-robot" id="robot1"><h1>Then this Bot will probably use the majority of that time.</h1></i></div>
+                        </div>
                         <h1>Hey and welcome to QuizBot.</h1>
-                        <h1>Your unfriendly time killer.</h1>
-                        <h1>Got some time to spare?</h1>
-                        <h1>Then this Bot will probably use the majority of that time.</h1>
+                       
                         <p><span id="rules"><h3><br>Press to read the rules<br>⬇</h3></span>
                             <span id="more">
                             The game is simple, you've got 3 difficulties to choose from.
@@ -38,6 +42,7 @@
                             <br>If you're a veteran at guessing games, hit that Medium button and try your luck against an additional opponent.
                             <br>Feeling lucky? try Hard and it's you against the QuizBot and 2 additional opponents. 
                             <br>You're always up against time which is 20 seconds and the Quizbot.
+                            <br>
                             <br>Easy - numbers between 1 and 10.
                             <br>Medium - numbers between 1 and 20 + an opponent.
                             <br>Hard - numbers between 1 and 30 + two additional opponents.
@@ -58,5 +63,4 @@
 </section>
 </body>
 </main>
-<script src="main.js"></script>
 </html>

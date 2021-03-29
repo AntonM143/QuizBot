@@ -251,13 +251,18 @@ input:focus{
 .ruleCard1{
 	display: flex;
 	margin: 20px;
-	width: 100%;
+	width: auto;
 	height: auto;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
 .ruleInfo{
 	font-family: 'Crimson Text', serif;
+}
+.ruleInfo2{
+	justify-content: space-between;
+	flex-direction: row;
+	display: flex;
 }
 .defaultBtn{
 	display:flex;
@@ -456,9 +461,24 @@ input:focus{
 	border:1px solid #d83526;
 	cursor: pointer;
 	margin-left: auto;
+}
+#robot1, .fa-user-clock, .fa-cog{
+font-size: 6vw;
+color:#E60A13;
+}
+.cogWheel{
+display: flex;
 
 }
-
+.ruleInfo2 h1{
+	color: black;
+}
+.timeBot{
+display: flex;
+}
+.wasteBot{
+display: flex;
+}
 /* ---------------------------------------mobile first regelsidan------------------------------------- */
 @media screen and (max-width: 800px) {
 	#easyBtn{
@@ -516,6 +536,8 @@ input:focus{
 	}
 	.ruleInfo{
 		font-family: 'Crimson Text', serif;
+	}
+	
 	}
 	.botCard{
 		flex-direction: column;
