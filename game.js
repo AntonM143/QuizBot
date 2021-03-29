@@ -173,6 +173,7 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
         headlineText.innerText = "Lower!"
         iconDiv.className = "fas fa-arrow-down"
         box.append(headlineText, iconDiv)
+        
 
 
     }if(inputNumber < correctAnswer){
@@ -188,11 +189,12 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
         box.innerHTML = " "
         headlineText.innerText = "WIN!"
         box.append(headlineText)
-
+        
+        timeleft = -1
         console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
         timeBar.innerHTML = " "
-        setTimeout(console.log("game over"), 10000);
-        popup()
+        
+        popup(wins)
         /* spara resultat i local storage */
         let loggedInUser = JSON.parse(localStorage.getItem("login"));
         let resultList = JSON.parse(localStorage.getItem("result"));
