@@ -277,21 +277,13 @@ input:focus{
 }
 
 
-/* .defaultBtn:hover{
-	width:55%
-
-}
-
-
-
 .defaultBtn:hover{
-	width: 180px;
-	height: 55px;
+	background-color: #e60a0a;
 }
-.defaultBtn:active{
-	width: 170px;
-	height: 45px;
-}
+
+
+
+
 
 /* .botCard{
 
@@ -353,6 +345,7 @@ input:focus{
 
 	#popup{
     display: flex;
+		position: relative;
     left: 0;
     right: 0;
 		border-radius: 5px;
@@ -379,7 +372,21 @@ input:focus{
     background-color:rgba(0, 0, 0, 0.19);
 	}
 
+	.fa-times-circle{
+		padding-right: 10px;
+		position: absolute;
+		text-align: end;
+		font-size: 2em;
+		width: 100%;
+	}
+	.fa-times-circle:hover{
+		cursor:pointer;
+		color:#48484885
+	}
+
 	.headlinePopup{
+		display: flex;
+		align-items: center;
 		font-family: lores-12,sans-serif;
 		font-weight: 700;
 		font-style: normal;
@@ -391,8 +398,9 @@ input:focus{
 		justify-content: center;
 		margin: 10px;
 		font-size: 5rem;
-		color: #E60A13;
+		color: #FFDF00;
 	}
+
 
 	.btnDiv{
 		display: flex;
@@ -547,19 +555,26 @@ input:focus{
 	.ruleInfo{
 		font-family: 'Crimson Text', serif;
 	}
-	.botCard{
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
-		font-size: 20px
+
+		.botInfo{
+			font-size: 5vw;
+		}
+
+		#popup{
+			max-width: 100%; 
+		
+		}
+
+		.defaultBtn{
+			font-size: 1em;
+		}
+
+		.fa-robot{
+			font-size: 16vw;
+			color:#E60A13;
+		
 	}
-	.playerCard{
-		display: flex;
-		width: 100vw;
-		height: auto;
-		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
-		border-radius: 10px;
-	}
+
 h1{
 	font-size: 1.3rem;
 }

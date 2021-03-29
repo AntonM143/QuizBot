@@ -1,5 +1,4 @@
 
-
 window.addEventListener("load", initSite);
 
 const params = new URLSearchParams(window.location.search);
@@ -29,15 +28,6 @@ function checkLogin(){
       }
 }
 
-
-
-
-
-
-
-
-
-
 function gameMode(maxNumber){
     //if the url is tampered automatically send back to index
     if (maxNumber != 10 && maxNumber !=20 && maxNumber !=30) {
@@ -49,47 +39,35 @@ function gameMode(maxNumber){
         let guessButton = document.getElementById("guessNumberBtn");
         let inputPlayer = document.getElementById("inputPlayer")
         
-        
-        
-        const display = ()=>{
-            inputPlayer.style.display == "none" ? inputPlayer.style.display = "flex" : inputPlayer.style.display = "flex" 
-        }
-        
         guessButton.addEventListener("click", ()=>{
             
             let botContainer = document.getElementById("containerBot")
             let inputNumber = document.getElementById("inputNumber").value
             
             botContainer.innerHTML = ""
-            
-            
-            if(maxNumber == 20){
-                inputPlayer.style.display = "none"
-                
-                setTimeout(()=>{ display(), botOne(maxNumber, randomNumber)}, 1000)
-                
-                
+  
+            if(maxNumber == 20){        
+                setTimeout(()=>{botOne(maxNumber, randomNumber)}, 1000)
             }
             if(maxNumber == 30){
-                inputPlayer.style.display = "none"
                 
                 setTimeout(()=>{ botOne(maxNumber, randomNumber)}, 1000)
-                setTimeout(()=>{ display(),botTwo(maxNumber, randomNumber)}, 2000)
-                
-                
+                setTimeout(()=>{ botTwo(maxNumber, randomNumber)}, 2000)
+  
             }else{
                 
                 
                 //hehe
             }
+
             checkAnswer(randomNumber, inputNumber);
             
         });
+
         console.log("The right answer is: " + randomNumber)
         
     }
 }
-
 
 
 
@@ -103,12 +81,9 @@ function botOne(maxNumber, randomNumber){
     
  
     divNumber.className = "playerCard"
-    
     divNumber.innerHTML = " "
-    divNumber.innerHTML = "bot 1 gissning är " + " " + guessBot
-    
+    divNumber.innerHTML = "Botzon gissning är " + " " + guessBot
     botContainer.append(divNumber)
-
     console.log("The bots 1 answer is: " +  guessBot)
     
     checkAnswer(randomNumber, null, guessBot)
@@ -140,7 +115,6 @@ function startGame(){
     headlineText.innerText = "Start guessing!"
     box.append(headlineText)
     let inputNumber = document.getElementById("inputNumber").value = " ";
-
     let timeBar = document.getElementById("timeBar");
     timer()
     
@@ -166,15 +140,12 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
             return
         }
     
-
-
     if(inputNumber > correctAnswer){
         box.innerHTML = " "
         headlineText.innerText = "Lower!"
         iconDiv.className = "fas fa-arrow-down"
         box.append(headlineText, iconDiv)
         
-
 
     }if(inputNumber < correctAnswer){
         box.innerHTML = " "
@@ -185,7 +156,7 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
 
     if(inputNumber == correctAnswer){
         const wins = "PLAYER_WON"
-
+        
         box.innerHTML = " "
         headlineText.innerText = "WIN!"
         box.append(headlineText)
@@ -456,13 +427,14 @@ function reloadToIndex(){
   function popup(wins, timeleft){
         const headlineDiv = document.createElement("div")
         headlineDiv.className = "headlinePopup"
+        const closePopup = document.createElement("div")
+        closePopup.className = "far fa-times-circle"
         const headlineText = document.createElement("h1")
         const popupIcon = document.createElement("div")
         popupIcon.id = "popupIcon"
         const btnDiv = document.createElement("div")
         btnDiv.className = "btnDiv"
         const tryAgainBtn = document.createElement("div")
-        const exitBtn = document.createElement("div")
         const popupBackground = document.getElementById("popupBackground")
 
         const option = document.getElementById("popup")
@@ -496,17 +468,12 @@ function reloadToIndex(){
             headlineDiv.append(headlineText)
         }
         
-        
-        
-       
         tryAgainBtn.className = "defaultBtn"
-        exitBtn.className = "defaultBtn"
         tryAgainBtn.innerText = "Play again!"
-        exitBtn.innerText = "Exit"
 
-        btnDiv.append(tryAgainBtn,exitBtn)
+        btnDiv.append(tryAgainBtn)
 
-        option.append(headlineDiv,popupIcon,btnDiv)
+        option.append(closePopup,headlineDiv,popupIcon,btnDiv)
 
 
         tryAgainBtn.addEventListener("click", () =>{
@@ -518,6 +485,6 @@ function reloadToIndex(){
             startGame()
         })
 
-        exitBtn.addEventListener("click", reloadToIndex )
+        closePopup.addEventListener("click", reloadToIndex )
         popupBackground.append(option)
     }
