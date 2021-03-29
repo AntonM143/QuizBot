@@ -58,11 +58,11 @@ function gameMode(maxNumber){
         guessButton.addEventListener("click", ()=>{
             
             let botContainer = document.getElementById("containerBot")
-            let inputNumber = document.getElementById("inputNumber").value;
+            let inputNumber = document.getElementById("inputNumber").value
+            
             botContainer.innerHTML = ""
             
-            checkAnswer(randomNumber, inputNumber);
-
+            
             if(maxNumber == 20){
                 inputPlayer.style.display = "none"
                 
@@ -72,12 +72,17 @@ function gameMode(maxNumber){
             }
             if(maxNumber == 30){
                 inputPlayer.style.display = "none"
-
-                setTimeout(()=>{ botOne(maxNumber, randomNumber)}, 0)
-                setTimeout(()=>{ display(),botTwo(maxNumber, randomNumber)}, 500)
                 
-               
+                setTimeout(()=>{ botOne(maxNumber, randomNumber)}, 1000)
+                setTimeout(()=>{ display(),botTwo(maxNumber, randomNumber)}, 2000)
+                
+                
+            }else{
+                
+                
+                //hehe
             }
+            checkAnswer(randomNumber, inputNumber);
             
         });
         console.log("The right answer is: " + randomNumber)
@@ -153,7 +158,7 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
     let guessTwoBot = botTwoGuess
     
     
-    if(inputNumber !=null){
+    if(inputNumber !=null) {
 
         if(isNaN(inputNumber)){
             headlineText.innerText = "Select a number!"
@@ -161,43 +166,102 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
             return
         }
     
-        
-    
-        if(inputNumber > correctAnswer){
-            box.innerHTML = " "
-            headlineText.innerText = "Lower!"
-            iconDiv.className = "fas fa-arrow-down"
-            box.append(headlineText, iconDiv)
-    
-    
-        }if(inputNumber < correctAnswer){
-            box.innerHTML = " "
-            headlineText.innerText = "Higher!"
-            iconDiv.className = "fas fa-arrow-up"
-            box.append(headlineText, iconDiv)
-        }
-    
-        if(inputNumber == correctAnswer){
-            const wins = "PLAYER_WON"
-    
-            box.innerHTML = " "
-            headlineText.innerText = "WIN!"
-            box.append(headlineText)
-    
-            console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
-            
-            
-            timeleft = -1
-            /* setTimeout(console.log("game over"), 10000); */
-            popup(wins)
-    
-            /* setTimeout(reloadToIndex, 10000); */
-            
-            return box.innerText = "You won!!";
-    
-        }
 
+
+    if(inputNumber > correctAnswer){
+        box.innerHTML = " "
+        headlineText.innerText = "Lower!"
+        iconDiv.className = "fas fa-arrow-down"
+        box.append(headlineText, iconDiv)
+
+
+    }if(inputNumber < correctAnswer){
+        box.innerHTML = " "
+        headlineText.innerText = "Higher!"
+        iconDiv.className = "fas fa-arrow-up"
+        box.append(headlineText, iconDiv)
     }
+
+    if(inputNumber == correctAnswer){
+        const wins = "PLAYER_WON"
+
+        box.innerHTML = " "
+        headlineText.innerText = "WIN!"
+        box.append(headlineText)
+
+        console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
+        timeBar.innerHTML = " "
+        setTimeout(console.log("game over"), 10000);
+        popup()
+        /* spara resultat i local storage */
+        let loggedInUser = JSON.parse(localStorage.getItem("login"));
+        let resultList = JSON.parse(localStorage.getItem("result"));
+        if(resultList == null){
+            console.log("Listan är tom!!");
+            resultList = [];
+            console.log(number)
+            let player
+            if(number == 10){
+                player = {
+                    username: loggedInUser,
+                    score: 1
+                }
+            }if(number == 20){
+                player = {
+                    username: loggedInUser,
+                    score: 5
+                }
+            }if(number == 30){
+                player = {
+                    username: loggedInUser,
+                    score: 10
+                }
+            }
+            resultList.push(player);
+            localStorage.setItem("result", JSON.stringify(resultList));
+        }else{
+            for (let i = 0; i < resultList.length; i++) {
+                const user = resultList[i];
+                if(user.username == loggedInUser){
+                    if(number == 10){
+                        user.score += 1
+                        localStorage.setItem("result", JSON.stringify(resultList));
+                        return
+                    }if(number == 20){
+                        user.score += 5
+                        localStorage.setItem("result", JSON.stringify(resultList));
+                        return
+                    }if(number == 30){
+                        user.score += 10
+                        localStorage.setItem("result", JSON.stringify(resultList));
+                        return
+                        }
+                    }
+                }
+                if(number == 10){
+                    player = {
+                        username: loggedInUser,
+                        score: 1
+                    }
+                    
+                }if(number == 20){
+                    player = {
+                        username: loggedInUser,
+                        score: 5
+                    }
+                }if(number == 30){
+                    player = {
+                        username: loggedInUser,
+                        score: 10
+                    }
+                }          
+            resultList.push(player);
+            localStorage.setItem("result", JSON.stringify(resultList));
+        }
+    }
+}
+        /* setTimeout(reloadToIndex, 10000); */
+
 
     if(guessOneBot == correctAnswer){
         const wins = "Bot one won"
@@ -210,7 +274,71 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
         
         setTimeout(()=>{popup(wins, timeleft)},1000)
         timeBar.innerHTML = " "
-        return box.innerText = "Bot one won!!";
+        box.innerText = "Bot one won!!";
+        let resultList = JSON.parse(localStorage.getItem("result"));
+        if(resultList == null){
+            resultList = [];
+            let player
+            if(number == 10){
+                player = {
+                    username: "BotOne",
+                    score: 1
+                }
+            }if(number == 20){
+                player = {
+                    username: "BotOne",
+                    score: 5
+                }
+            }if(number == 30){
+                player = {
+                    username: "BotOne",
+                    score: 10
+                }
+            }
+            resultList.push(player);
+            localStorage.setItem("result", JSON.stringify(resultList));
+        }else{
+            for (let i = 0; i < resultList.length; i++) {
+                const user = resultList[i];
+                if(user.username == "BotOne"){
+                    if(number == 10){
+                        user.score += 1                  
+                        localStorage.setItem("result", JSON.stringify(resultList));
+                        return
+                    }if(number == 20){
+                        user.score += 5
+                        localStorage.setItem("result", JSON.stringify(resultList));
+                        return            
+                    }if(number == 30){
+                        user.score += 10 
+                        localStorage.setItem("result", JSON.stringify(resultList));
+                        return        
+                    }  
+                }
+            }          
+        }
+        if(number == 10){
+            player = {
+                username: "BotOne",
+                score: 1
+            }
+            
+        }if(number == 20){
+            player = {
+                username: "BotOne",
+                score: 5
+            }
+        }if(number == 30){
+            player = {
+                username: "BotOne",
+                score: 10
+            }
+        }          
+        resultList.push(player);
+        localStorage.setItem("result", JSON.stringify(resultList));
+        console.log("JA DEN LÄSTE HIT")
+        /* return box.innerText = "Bot one won!!"; */
+        return
         /* setTimeout(reloadToIndex, 10000); */
 
 
@@ -226,7 +354,71 @@ function checkAnswer(correct, input, botOneGuess, botTwoGuess){
         
         setTimeout(()=>{popup(wins, timeleft)},1000)
         timeBar.innerHTML = " "
-        return box.innerText = "Bot two won!!";
+        box.innerText = "Bot two won!!";
+        let resultList = JSON.parse(localStorage.getItem("result"));
+        if(resultList == null){
+            resultList = [];
+            let player
+            if(number == 10){
+                player = {
+                    username: "BotTwo",
+                    score: 1
+                }
+            }if(number == 20){
+                player = {
+                    username: "BotTwo",
+                    score: 5
+                }
+            }if(number == 30){
+                player = {
+                    username: "BotTwo",
+                    score: 10
+                }
+            }
+            resultList.push(player);
+            localStorage.setItem("result", JSON.stringify(resultList));
+        }else{
+            for (let i = 0; i < resultList.length; i++) {
+                const user = resultList[i];
+                if(user.username == "BotTwo"){
+                    if(number == 10){
+                        user.score += 1                  
+                        localStorage.setItem("result", JSON.stringify(resultList));
+                        return
+                    }if(number == 20){
+                        user.score += 5
+                        localStorage.setItem("result", JSON.stringify(resultList));
+                        return            
+                    }if(number == 30){
+                        user.score += 10 
+                        localStorage.setItem("result", JSON.stringify(resultList));
+                        return        
+                    }  
+                }
+            }          
+        }
+        if(number == 10){
+            player = {
+                username: "BotTwo",
+                score: 1
+            }
+            
+        }if(number == 20){
+            player = {
+                username: "BotTwo",
+                score: 5
+            }
+        }if(number == 30){
+            player = {
+                username: "BotTwo",
+                score: 10
+            }
+        }          
+        resultList.push(player);
+        localStorage.setItem("result", JSON.stringify(resultList));
+        console.log("JA DEN LÄSTE HIT")
+        /* return box.innerText = "Bot two won!!"; */
+        return
         /* setTimeout(reloadToIndex, 10000); */
 
     }
@@ -327,5 +519,3 @@ function reloadToIndex(){
         exitBtn.addEventListener("click", reloadToIndex )
         popupBackground.append(option)
     }
-
-
