@@ -2,7 +2,7 @@ window.addEventListener("load", initSite);
 
 const params = new URLSearchParams(window.location.search);
 const number = params.get("difficulty");
-const randomNumber = Math.floor(Math.random() * number) + 1;
+const correctAnswer = Math.floor(Math.random() * number) + 1;
 
 
 let timeleft = 20; 
@@ -48,13 +48,13 @@ function gameMode(){
             
             botContainer.innerHTML = ""
             
-            checkAnswer(randomNumber, inputNumber);
+            checkAnswer(correctAnswer, inputNumber);
             //Ta bort denna ifall du vill se vad du precis gissat
             inputNumber = document.getElementById("inputNumber").value = " "
             
             
         });
-        console.log("The right answer is: " + randomNumber)
+        console.log("The right answer is: " + correctAnswer)
         
     }
 }
@@ -86,7 +86,7 @@ function startGame(){
 }
 
 // function that checks if the input answer is correct
-/**  correct = The correct answer | input = inputNumber from user | botOneGuess = botOneGuess | botTwoGuess = botTwoGuess */  
+/**  correct = The correct answer | input = inputNumber from user  */  
 function checkAnswer(correct, input){
     let box = document.getElementById("botInfo");
     let headlineText = document.createElement("h1")
@@ -96,12 +96,11 @@ function checkAnswer(correct, input){
 
     let guessOneBot = botOne()
     let guessTwoBot = botTwo()
-        const display = ()=>{
-            inputPlayer.style.display == "none" ? inputPlayer.style.display = "flex" : inputPlayer.style.display = "flex" 
-        }
-    
     let inputNumber = input 
     let correctAnswer = correct
+    const display = ()=>{
+        inputPlayer.style.display == "none" ? inputPlayer.style.display = "flex" : inputPlayer.style.display = "flex" 
+    }
     
     
     
