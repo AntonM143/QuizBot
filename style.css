@@ -468,25 +468,6 @@ input:focus{
       transform: scaleX(0);
     }
   } 
-	@media only screen and (max-width: 800px) {
-		.botInfo{
-			font-size: 5vw;
-		}
-
-		#popup{
-			max-width: 100%; 
-		
-		}
-
-		.defaultBtn{
-			font-size: 1em;
-		}
-
-		.fa-robot{
-			font-size: 16vw;
-			color:#E60A13;
-		}
-	}
 #signout{
 	display:flex;
 	/* align-self: flex-end; */
@@ -515,10 +496,9 @@ input:focus{
 	right: 0;
 }
 
-
-/* ---------------------------------------mobile first regelsidan------------------------------------- */
-@media screen and (max-width: 800px) {
-	#easyBtn{
+	/* ---------------------------------------mobile first regelsidan------------------------------------- */
+	@media screen and (max-width: 800px) {
+		#easyBtn{
 		display:flex;
 		justify-content: center;
 		align-items: center;
@@ -574,9 +554,6 @@ input:focus{
 	.ruleInfo{
 		font-family: 'Crimson Text', serif;
 	}
-
-	
-	}
 	.botCard{
 		flex-direction: column;
 		align-items: center;
@@ -599,34 +576,30 @@ input:focus{
 	}
 
 
-		.botInfo{
-			font-size: 5vw;
-		}
-
-		#popup{
-			max-width: 100%; 
-		
-		}
-
-		.defaultBtn{
-			font-size: 1em;
-		}
-
-		.fa-robot{
-			font-size: 16vw;
-			color:#E60A13;
-		
+	.botInfo{
+		font-size: 5vw;
 	}
 
+	#popup{
+		max-width: 100%; 
+	
+	}
 
-h1{
-	font-size: 1.3rem;
+	.defaultBtn{
+		font-size: 1em;
+	}
+
+	.fa-robot{
+		font-size: 16vw;
+		color:#E60A13;
+	
+	}
+
 }
-h3{
-	font-size: 1.5rem;
-}
+
 p{
 	font-size: small;
 }
+
 /* ---------------------------------------mobile first regelsidan------------------------------------- */
 
