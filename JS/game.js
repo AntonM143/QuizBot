@@ -23,7 +23,7 @@ function checkLogin(){
     let loggedInUser = JSON.parse(localStorage.getItem("login"));
     let usernameDiv = document.getElementById("username") 
     if(loggedInUser == null){
-        location.replace("login.html");
+        location.replace("../html/login.html");
     }else if(loggedInUser !== null){
         usernameDiv.innerHTML = loggedInUser
         console.log(loggedInUser)
@@ -36,7 +36,7 @@ function gameMode(){
 
     //if the url is tampered automatically send back to index
     if (number != 10 && number !=20 && number !=30) {
-        location.replace("index.html")
+        location.replace("../html/index.html")
         // else run/start the game
     }else{
         startGame()
@@ -301,7 +301,7 @@ function timer(){
 }
 
 function reloadToIndex(){
-    location.href = "../index.html"
+    location.href = "../html/userpage.html"
 }
 
   

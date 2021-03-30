@@ -30,7 +30,7 @@ function saveUser(){
     listOfUsers.push(userToSave);
     localStorage.setItem("users", JSON.stringify(listOfUsers));
     alert("Your account was successfully created!");
-    location.replace("login.html");
+    location.replace("../html/login.html");
 }
 function clearInput(){
     let inputUsername = document.getElementById("newUsername").value = "";

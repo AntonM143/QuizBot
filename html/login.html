@@ -5,25 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizApp</title>
-    <link rel="stylesheet" href="./style/login.css">
-    <script src="./JS/signup.js" defer></script>
+    <link rel="stylesheet" href="../style/login.css">
+    <script type="module" src="../JS/login.js" defer></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://use.typekit.net/ydb2bnu.css">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <img class="brandImg" src="/assets/quizbot1.png" alt="">
+        <img class="brandImg" src="../assets/quizbot1.png" alt="">
     </header>
     <main>
         <div class="mainContainer">
             <div class="signupForm">
-                <h2>Sign up to play!</h2>
-                <label for="">Create a username:</label>
-                <input type="text" name="" id="newUsername" placeholder="Username...">
-                <label for="">Create a password:</label>
-                <input type="password" name="" id="newPassword" placeholder="Password...">
-                <button class="createButton" id="createButton">Create Account</button>
+                <h2>Log in!</h2>
+                <label for="">Username:</label>
+                <input type="text" name="" id="username" placeholder="Username...">
+                <label for="">Password:</label>
+                <input type="password" name="" id="password" placeholder="Password...">
+                <button class="createButton" id="loginButton">Log in</button>
+                <a href="/html/signup.html">No account?</a>
             </div>
             <div id="info"></div>
         </div>
