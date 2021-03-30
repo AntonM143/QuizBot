@@ -493,8 +493,11 @@ input:focus{
 	position: absolute;
 	justify-content: flex-end;
 	align-items: center;
-	right: 0;
-}
+
+	top: 15vh;
+	right: 1vw;
+	
+
 
 	/* ---------------------------------------mobile first regelsidan------------------------------------- */
 	@media screen and (max-width: 800px) {
@@ -568,11 +571,11 @@ input:focus{
 		border-radius: 10px;
 	}
 	.nav{
-		display: flex;
+		/* display: flex;
 		position: absolute;
 		justify-content: flex-end;
-		align-items: center;
-		top: 0;
+		align-items: center; */
+		top: 21vh;
 	}
 
 
