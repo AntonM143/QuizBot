@@ -260,7 +260,7 @@ input:focus{
 	font-family: 'Crimson Text', serif;
 }
 .ruleInfo2{
-	justify-content: space-between;
+	justify-content: space-b;
 	flex-direction: row;
 	display: flex;
 }
