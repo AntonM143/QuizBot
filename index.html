@@ -13,27 +13,38 @@
 </head>
 <body>
     <header>
-        <div class="brand">
-            <img class="brandImg" src="/assets/quizbot1.png" alt="">
-        </div>
-        <div class="nav">
-            <button id="signout">Sign out</button>
-        </div>
+            <div class="brand">
+                <img class="brandImg" src="/assets/quizbot1.png" alt="">
+            </div>
+            <div class="nav">
+                <button id="signout">Sign out</button>
+            </div>
     </header>
 <main>
     <section>
         <div class="rulesDiv">
-            <div class="ruleCard botCard playerCard">
-                <div>
-                    <i class="fas fa-robot"></i>
+            <div class="ruleCard ruleCard1">
+                <div class="ruleImg"> 
                 </div>
                     <div class="ruleInfo">
-                        <h1>Hey and welcome to QuizBot.</h1>
-                        <h1>Your unfriendly time killer.</h1>
-                        <h1>Got some time to spare?</h1>
-                        <h1>Then this Bot will probably use the majority of that time.</h1>
+                        <h1>Hey and welcome to QuizBot!</h1>
+                        <div class="ruleInfo2">
+                        <div class="cogWheel"><i class="fas fa-cog"><h1>Your unfriendly time killer.</h1></i></div>
+                        <div class="timeBot"><i class="fas fa-user-clock"><h1>Got some time to spare?</h1></i>
+                        </div>
+                        <div class="wasteBot"><i class="fas fa-robot" id="robot1"><h1>Then this Bot will probably use the majority of that time.</h1></i></div>
+                        </div>
                         <p><span id="rules"><h3><br>Press to read the rules<br>⬇</h3></span>
-                            <span id="more">The game is simple, you've got 3 difficulties to choose from. If this is your first time you should probably complete Easy a couple of times. If you're a veteran at guessing games, hit that Medium button and try your luck against an additional opponent. Feeling lucky? try Hard and it's you against the QuizBot and 2 additional opponents. You're always up against time which is 20 seconds and the Quizbot.<br>Easy - numbers between 1 and 10.<br>Medium - numbers between 1 and 20 + an opponent.<br>Hard - numbers between 1 and 30 + two additional opponents.
+                            <span id="more">
+                            The game is simple, you've got 3 difficulties to choose from.
+                            <br>If this is your first time you should probably complete Easy a couple of times. 
+                            <br>If you're a veteran at guessing games, hit that Medium button and try your luck against an additional opponent.
+                            <br>Feeling lucky? try Hard and it's you against the QuizBot and 2 additional opponents. 
+                            <br>You're always up against time which is 20 seconds and the Quizbot.
+                            <br>
+                            <br>Easy - numbers between 1 and 10.
+                            <br>Medium - numbers between 1 and 20 + an opponent.
+                            <br>Hard - numbers between 1 and 30 + two additional opponents.
                             </span>
                         </p>
                         <button onclick="myFunction()" id="rulesBtn">Read more</button>
@@ -51,5 +62,4 @@
 </section>
 </body>
 </main>
-<script src="main.js"></script>
 </html>
