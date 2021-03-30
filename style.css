@@ -489,8 +489,11 @@ h2
 	position: absolute;
 	justify-content: flex-end;
 	align-items: center;
-	right: 0;
-}
+
+	top: 15vh;
+	right: 1vw;
+	
+
 
 	/* ---------------------------------------mobile first regelsidan------------------------------------- */
 	@media screen and (max-width: 800px) {
@@ -587,10 +590,18 @@ h2
 	flex: 1;
 
 	}
+
 	.fa-cog{
 	font-size: 6vw;
 	color:#E60A13;
 	flex: 1;
+  }
+	.nav{
+		/* display: flex;
+		position: absolute;
+		justify-content: flex-end;
+		align-items: center; */
+		top: 21vh;
 	}
 
 	.ruleInfo2 h1{
