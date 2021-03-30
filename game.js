@@ -13,9 +13,30 @@ let guessButton = document.getElementById("guessNumberBtn");
 function initSite(){
         gameMode()
         checkLogin();
+        
+
       
 }
 
+const changeOrder = () => {
+    let botDiv = document.getElementById("containerBot")
+    let dasPlayerDiv = document.getElementById("2")
+
+  
+    if(dasPlayerDiv.style.order = "1"){
+        botDiv.style.order = "1"
+        dasPlayerDiv.style.order = "0"
+        
+    } 
+} 
+const animation = ()=>{
+    let botDiv = document.getElementById("containerBot")
+    let dasPlayerDiv = document.getElementById("2")
+
+
+/*     dasPlayerDiv.style.transform="translate(0, 50%)"
+    dasPlayerDiv.style.transition="2s ease"  */
+}
     
 
   // check if user is logged in and also set the username
@@ -30,6 +51,9 @@ function checkLogin(){
         return loggedInUser
       }
 }
+
+
+
 
 
 function gameMode(){
@@ -47,11 +71,8 @@ function gameMode(){
 
         guessButton.addEventListener("click", ()=>{
             
-            let botContainer = document.getElementById("containerBot")
+           
             let inputNumber = document.getElementById("inputNumber").value
-            
-            botContainer.innerHTML = ""
-
             
             checkAnswer(correctAnswer, inputNumber);
             //Ta bort denna ifall du vill se vad du precis gissat
@@ -70,7 +91,7 @@ function gameMode(){
 // func for bot 1 
 function botOne(){
 
-    
+    animation()
     return  Math.floor(Math.random() * number) + 1;
    
 }
@@ -86,6 +107,56 @@ function startGame(){
     const headlineText = document.createElement("h1")
     headlineText.innerText = "Start guessing!"
     box.append(headlineText)
+
+    if(number == 20 || number == 30){
+        let botContainer = document.getElementById("containerBot")
+        let botAnswerText = document.createElement("div")
+        botAnswerText.className = "userInput"
+        let botProfileDiv = document.createElement("div")
+        botProfileDiv.className = "profileInfo"
+        let botName = document.createElement("div")
+        botName.id = "username"
+        botName.innerText = "BotMan"
+        let botButton = document.createElement("div")
+        botButton.className = "imgButton"
+        let botImgOne = document.createElement("img")
+        botImgOne.src = "/assets/Bot1.png"
+        let botAnswerDiv = document.createElement("div")
+        botAnswerDiv.className = "playerCard"
+        botAnswerText.id = "botTextBox"
+        
+
+        botAnswerText.innerText =" här kommer svaret från botten!!"
+
+        botButton.append(botImgOne)
+        botProfileDiv.append(botButton,botName)
+        botAnswerDiv.append(botProfileDiv,botAnswerText)
+        botContainer.append(botAnswerDiv)
+    }
+    if(number == 30){
+
+        let botContainerTwo = document.getElementById("containerBot")
+        let botAnswerTextTwo = document.createElement("div")
+        botAnswerTextTwo.className = "userInput"
+        botAnswerTextTwo.id = "3"
+        let botProfileDivTwo = document.createElement("div")
+        botProfileDivTwo.className = "profileInfo"
+        let botButtonTwo = document.createElement("div")
+        botButtonTwo.className = "imgButton"
+        let botNameTwo = document.createElement("div")
+        botNameTwo.id = "username"
+        botNameTwo.innerText = "TwoPack"
+        let botImgTwo = document.createElement("img")
+        botImgTwo.src = "/assets/Bot2.png"
+        let botAnswerDivTwo = document.createElement("div")
+        botAnswerDivTwo.className = "playerCard"
+        botAnswerTextTwo.innerText =" här kommer svaret från botten!!"
+        botAnswerTextTwo.id = "botTextBoxTwo"
+        botButtonTwo.append(botImgTwo)
+        botProfileDivTwo.append(botButtonTwo,botNameTwo)
+        botAnswerDivTwo.append(botProfileDivTwo,botAnswerTextTwo)
+        botContainerTwo.append(botAnswerDivTwo)
+    }
 
     timer()
   
@@ -105,9 +176,7 @@ function checkAnswer(correct, input){
     let guessTwoBot = botTwo()
     let inputNumber = input 
     let correctAnswer = correct
-    const display = ()=>{
-        inputPlayer.style.display == "none" ? inputPlayer.style.display = "flex" : inputPlayer.style.display = "flex" 
-    }
+
     
     
     
@@ -147,23 +216,23 @@ function checkAnswer(correct, input){
 }
     //IF GAMEMODE IS MEDIUM 
     if(number == 20 || number == 30){
-       
-
-        let divNumber = document.createElement("div")
-        let botContainer = document.getElementById("containerBot")
-    
-        divNumber.className = "playerCard"
         
-        botContainer.append(divNumber)
-
+        let answerBox = document.getElementById("botTextBox")
         console.log("The bots 1 answer is: " +  guessOneBot)
-        inputPlayer.style.display = "none"
         
-        setTimeout(()=>{ display(), guessOneBot, divNumber.innerHTML = "bot 1 gissning är " + " " + guessOneBot}, 1000)
-    
+        
+   
+        let botDiv = document.getElementById("containerBot")
+        botDiv.style.order = "0"
+        let dasPlayerDiv = document.getElementById("2")
+        dasPlayerDiv.style.order = "1"
+        answerBox.innerText = "BotMan gissar på....."
+        setTimeout(()=>{guessOneBot,answerBox.innerHTML = `BotMan gissade på ${guessOneBot}`,setTimeout(changeOrder,2000)}, 1000)
+            
+
         if(guessOneBot == correctAnswer){
             const wins = "Bot one won"
-    
+            
             console.log("%cBOT ONE WON!!!", "color: blue; font-size: 20px;");
             headlineText.innerText = "BOT ONE WON!"
             box.append(headlineText)
@@ -178,17 +247,11 @@ function checkAnswer(correct, input){
     }
     //IF GAMEMODE IS HARD 
     if(number == 30){
-        let divNumber = document.createElement("div")
-        let botContainer = document.getElementById("containerBot")
-    
-        divNumber.className = "playerCard"
         
-        
-        botContainer.append(divNumber)
-        console.log("The bots 2 answer is: " +  guessTwoBot)
-        inputPlayer.style.display = "none"
-        
-        setTimeout(()=>{  guessTwoBot, divNumber.innerHTML = "bot 2 gissning är " + " " + guessTwoBot, display()}, 2000)
+         let answerBox = document.getElementById("botTextBoxTwo")
+        answerBox.innerText = "TwoPack gissar på...."
+        console.log("The bots 1 answer is: " +  guessOneBot)
+        setTimeout(()=>{guessTwoBot,answerBox.innerHTML = `TwoPack gissade på ${guessTwoBot}`}, 2000)
     
         if(guessTwoBot == correctAnswer){
             const wins = "Bot two won"
