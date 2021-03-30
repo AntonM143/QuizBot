@@ -241,28 +241,73 @@ input:focus{
 	font-size: 30px;
 }
 .ruleCard{
-	display: flex;
-	flex-direction: column;
-	width: 80vw;
-	height: 550px;
+	/* width: 500vw;
+	height: 550px; */
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
 .ruleCard1{
 	display: flex;
+	flex-direction: column;
 	margin: 20px;
-	width: auto;
-	height: auto;
+	width: 100vh;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
 .ruleInfo{
 	font-family: 'Crimson Text', serif;
+	display: flex;
+	font-size: 1.3vh;
+		
 }
 .ruleInfo2{
-	justify-content: space-b;
 	flex-direction: row;
 	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+}
+#robot1{
+	font-size: 6vw;
+	color:sandybrown;
+	flex: 1;
+	}
+	.fa-user-clock{
+	font-size: 6vw;
+	color:blue;
+	flex: 1;
+
+	}
+	.fa-cog{
+	font-size: 6vw;
+	color:#E60A13;
+	flex: 1;
+	}
+
+	.ruleInfo2 h1{
+	color: black;
+	font-size: 2.2vh
+	}
+	.timeBot{
+	display: flex;
+	}
+	.wasteBot{
+	display: flex;
+	}
+#registerBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 280px;
+	height: 50px;
+	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 2.5rem;
 }
 .defaultBtn{
 	display:flex;
@@ -462,31 +507,7 @@ input:focus{
 	cursor: pointer;
 	margin-left: auto;
 }
-#robot1{
-font-size: 6vw;
-color:sandybrown;
-}
-.fa-user-clock{
-font-size: 6vw;
-color:blue;
-}
-.fa-cog{
-font-size: 6vw;
-color:#E60A13;
-}
-.cogWheel{
-display: flex;
 
-}
-.ruleInfo2 h1{
-	color: black;
-}
-.timeBot{
-display: flex;
-}
-.wasteBot{
-display: flex;
-}
 /* ---------------------------------------mobile first regelsidan------------------------------------- */
 @media screen and (max-width: 800px) {
 	#easyBtn{
@@ -576,6 +597,5 @@ h3{
 p{
 	font-size: small;
 }
-  }
 /* ---------------------------------------mobile first regelsidan------------------------------------- */
 
