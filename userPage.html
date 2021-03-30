@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizApp</title>
+    <script src="./JS/userPage.js" defer ></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/userPage.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ydb2bnu.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+</head>
+<body>
+
+    <header>
+            <div class="brand">
+                <img class="brandImg" src="/assets/quizbot1.png" alt="">
+            </div>
+    </header>
+    <main>
+        <section class="mainContainerUser">
+                <div class="flexRow">
+
+                    <div class="box-small">
+                            <div class="flexColumn">
+                                
+                                <img class="profileImg" src="/assets/user_robot.png" alt="">
+                                <div id="username"></div>
+                                
+                                <div id="botInfo" class="botInfo"></div>
+                                
+                            </div>
+                    </div>
+                    <div class="box-small">
+                            <div class="flexColumn">
+                                <h2>Your highscore:</h2>
+                                <div id="result"></div>
+                                
+                                <div id="botInfo" class="botInfo"></div>
+                                
+                            </div>
+                    </div>
+                    <div class="box-small">                    
+                            <div class="flexColumn">
+                                <h2>Top 5:</h2>
+                                <div id="highscore"></div>
+                                
+                                <div id="botInfo" class="botInfo"></div>                               
+                            </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Select Difficulty</h3>
+                </div>
+                <div class="startGameBox">
+                    <div>
+                        <a href="game.html?difficulty=10"><i class="fas fa-robot" style="color: yellow;"></i></a>
+                        <h2>Easy</h2>
+                        
+                    </div>
+                    <div>
+                        <a href="game.html?difficulty=20"><i class="fas fa-robot" style="color: blue;"></i></a>
+                        <h2>Medium</h2>
+                        
+                    </div>
+                    <div>
+                        <a href="game.html?difficulty=30"><i class="fas fa-robot" style="color: red;"></i></a>
+                        <h2>Hard</h2>
+
+                    </div>
+                    
+                </div>
+                <div class="questionmark">
+                    <div>
+                        <h5>Rules</h5>
+                        <i id="rulesIcon"  class="far fa-question-circle"></i>
+                    </div>
+                </div>
+                   
+                    <!-- <div class="playerDiv">
+                        <div class="playerCard">
+                         
+                    </div>
+                    
+                </div>
+                <div class="playerDiv" id="containerBot"></div> -->
+        </section>
+
+    </main>
+
+</body>
+</html>
