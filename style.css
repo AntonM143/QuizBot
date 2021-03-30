@@ -418,25 +418,6 @@ input:focus{
       transform: scaleX(0);
     }
   } 
-	@media only screen and (max-width: 800px) {
-		.botInfo{
-			font-size: 5vw;
-		}
-
-		#popup{
-			max-width: 100%; 
-		
-		}
-
-		.defaultBtn{
-			font-size: 1em;
-		}
-
-		.fa-robot{
-			font-size: 16vw;
-			color:#E60A13;
-		}
-	}
 #signout{
     align-self: flex-end;
 	display:flex;
@@ -481,32 +462,32 @@ input:focus{
 	border:1px solid #d83526;
 	cursor: pointer;
 	margin-left: auto;
-}
-#robot1{
-font-size: 6vw;
-color:sandybrown;
-}
-.fa-user-clock{
-font-size: 6vw;
-color:blue;
-}
-.fa-cog{
-font-size: 6vw;
-color:#E60A13;
-}
-.cogWheel{
-display: flex;
+	}
+	#robot1{
+	font-size: 6vw;
+	color:sandybrown;
+	}
+	.fa-user-clock{
+	font-size: 6vw;
+	color:blue;
+	}
+	.fa-cog{
+	font-size: 6vw;
+	color:#E60A13;
+	}
+	.cogWheel{
+	display: flex;
 
-}
-.ruleInfo2 h1{
-	color: black;
-}
-.timeBot{
-display: flex;
-}
-.wasteBot{
-display: flex;
-}
+	}
+	.ruleInfo2 h1{
+		color: black;
+	}
+	.timeBot{
+	display: flex;
+	}
+	.wasteBot{
+	display: flex;
+	}
 /* ---------------------------------------mobile first regelsidan------------------------------------- */
 @media screen and (max-width: 800px) {
 	#easyBtn{
@@ -567,7 +548,7 @@ display: flex;
 	}
 
 	
-	}
+	
 	.botCard{
 		flex-direction: column;
 		align-items: center;
@@ -590,35 +571,35 @@ display: flex;
 	}
 
 
-		.botInfo{
-			font-size: 5vw;
-		}
+	.botInfo{
+		font-size: 5vw;
+	}
 
-		#popup{
-			max-width: 100%; 
-		
-		}
+	#popup{
+		max-width: 100%; 
+	
+	}
 
-		.defaultBtn{
-			font-size: 1em;
-		}
+	.defaultBtn{
+		font-size: 1em;
+	}
 
-		.fa-robot{
-			font-size: 16vw;
-			color:#E60A13;
-		
+	.fa-robot{
+		font-size: 16vw;
+		color:#E60A13;
+	
 	}
 
 
-h1{
-	font-size: 1.3rem;
-}
-h3{
-	font-size: 1.5rem;
-}
-p{
-	font-size: small;
-}
-  }
+	h1{
+		font-size: 1.3rem;
+	}
+	h3{
+		font-size: 1.5rem;
+	}
+	p{
+		font-size: small;
+	}
+} 
 /* ---------------------------------------mobile first regelsidan------------------------------------- */
 
