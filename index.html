@@ -15,26 +15,27 @@
     <header>
             <div class="brand">
                 <img class="brandImg" src="/assets/quizbot1.png" alt="">
-            </div>
-            <div class="nav">
-                <button id="signout">Sign out</button>
+                <!-- <div class="nav">
+                    <button id="signout">Sign out</button>
+                </div> -->
             </div>
     </header>
 <main>
     <section>
         <div class="rulesDiv">
             <div class="ruleCard ruleCard1">
-                <div class="ruleImg"> 
-                </div>
+                <br><h1>Hey and welcome to QuizBot!</h1><br>
                     <div class="ruleInfo">
-                        <h1>Hey and welcome to QuizBot!</h1>
                         <div class="ruleInfo2">
-                        <div class="cogWheel"><i class="fas fa-cog"><h1>Your unfriendly time killer.</h1></i></div>
-                        <div class="timeBot"><i class="fas fa-user-clock"><h1>Got some time to spare?</h1></i>
+                            <div class="cogWheel"><i class="fas fa-cog"><h1>Your unfriendly time killer.</h1></i></div>
+                            <div class="timeBot"><i class="fas fa-user-clock"><h1>Got some time to spare?</h1></i>
+                            </div>
+                            <div class="wasteBot"><i class="fas fa-robot" id="robot1">
+                                <h1>Then this Bot will <br> probably use the <br> majority of that time.</h1></i></div>
                         </div>
-                        <div class="wasteBot"><i class="fas fa-robot" id="robot1"><h1>Then this Bot will probably use the majority of that time.</h1></i></div>
-                        </div>
-                        <p><span id="rules"><h3><br>Press to read the rules<br>⬇</h3></span>
+                    </div>
+                    <div>
+                        <p><span id="rules"><h3>Press to read the rules <button onclick="myFunction()" id="rulesBtn">Read more</button></h3></span>
                             <span id="more">
                             The game is simple, you've got 3 difficulties to choose from.
                             <br>If this is your first time you should probably complete Easy a couple of times. 
@@ -47,18 +48,24 @@
                             <br>Hard - numbers between 1 and 30 + two additional opponents.
                             </span>
                         </p>
-                        <button onclick="myFunction()" id="rulesBtn">Read more</button>
-                </div>
-        </div> 
-    </div>
-    <div class="textDif">
+                    </div>
+                    <div class="textDif">
+                        <p>Register/login to play!</p>
+                    </div>
+                        <div class="difBtns">
+                            <a href="/login.html"><button id="registerBtn">Register/login</button></a>
+                        </div><br>
+            </div>   
+        </div>
+    
+    <!-- <div class="textDif">
         <h2>Choose a difficulty</h2>
     </div>
     <div class="difBtns">
         <a href="game.html?difficulty=10"><button id="easyBtn">Easy</button></a>
         <a href="game.html?difficulty=20"><button id="mediumBtn">Medium</button></a>
         <a href="game.html?difficulty=30"><button id="hardBtn">Hard</button></a>
-    </div>
+    </div> -->
 </section>
 </body>
 </main>
