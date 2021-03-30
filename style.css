@@ -476,21 +476,30 @@ input:focus{
 	color:#E60A13;
 	}
 	.cogWheel{
-	display: flex;
-
+		display: flex;
+		
 	}
 	.ruleInfo2 h1{
 		color: black;
 	}
 	.timeBot{
-	display: flex;
+		display: flex;
 	}
 	.wasteBot{
-	display: flex;
+		display: flex;
 	}
-/* ---------------------------------------mobile first regelsidan------------------------------------- */
-@media screen and (max-width: 800px) {
-	#easyBtn{
+	h1{
+		font-size: 1.3rem;
+	}
+	h3{
+		font-size: 1.5rem;
+	}
+	p{
+		font-size: small;
+	}
+	/* ---------------------------------------mobile first regelsidan------------------------------------- */
+	@media screen and (max-width: 800px) {
+		#easyBtn{
 		display:flex;
 		justify-content: center;
 		align-items: center;
@@ -590,16 +599,7 @@ input:focus{
 	
 	}
 
-
-	h1{
-		font-size: 1.3rem;
-	}
-	h3{
-		font-size: 1.5rem;
-	}
-	p{
-		font-size: small;
-	}
-} 
+}
+ 
 /* ---------------------------------------mobile first regelsidan------------------------------------- */
 
