@@ -442,7 +442,9 @@ input:focus{
 	position: absolute;
 	justify-content: flex-end;
 	align-items: center;
-	top: 0px;
+	top: 15vh;
+	right: 1vw;
+	
 }
 #signout{
 	display:flex;
@@ -572,11 +574,11 @@ input:focus{
 		border-radius: 10px;
 	}
 	.nav{
-		display: flex;
+		/* display: flex;
 		position: absolute;
 		justify-content: flex-end;
-		align-items: center;
-		top: 0;
+		align-items: center; */
+		top: 21vh;
 	}
 
 
