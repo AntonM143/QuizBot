@@ -462,7 +462,15 @@ input:focus{
 	cursor: pointer;
 	margin-left: auto;
 }
-#robot1, .fa-user-clock, .fa-cog{
+#robot1{
+font-size: 6vw;
+color:sandybrown;
+}
+.fa-user-clock{
+font-size: 6vw;
+color:blue;
+}
+.fa-cog{
 font-size: 6vw;
 color:#E60A13;
 }
