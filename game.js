@@ -1,3 +1,4 @@
+
 window.addEventListener("load", initSite);
 
 const params = new URLSearchParams(window.location.search);
@@ -32,21 +33,25 @@ function checkLogin(){
 
 
 function gameMode(){
+
     //if the url is tampered automatically send back to index
     if (number != 10 && number !=20 && number !=30) {
         location.replace("index.html")
         // else run/start the game
     }else{
         startGame()
+
         
         let guessButton = document.getElementById("guessNumberBtn");
       
+
         guessButton.addEventListener("click", ()=>{
             
             let botContainer = document.getElementById("containerBot")
             let inputNumber = document.getElementById("inputNumber").value
             
             botContainer.innerHTML = ""
+
             
             checkAnswer(correctAnswer, inputNumber);
             //Ta bort denna ifall du vill se vad du precis gissat
@@ -55,13 +60,16 @@ function gameMode(){
             
         });
         console.log("The right answer is: " + correctAnswer)
+
         
     }
 }
 
 
+
 // func for bot 1 
 function botOne(){
+
     
     return  Math.floor(Math.random() * number) + 1;
    
@@ -78,7 +86,6 @@ function startGame(){
     const headlineText = document.createElement("h1")
     headlineText.innerText = "Start guessing!"
     box.append(headlineText)
-    
 
     timer()
   
@@ -118,6 +125,7 @@ function checkAnswer(correct, input){
         iconDiv.className = "fas fa-arrow-down"
         box.append(headlineText, iconDiv)
         
+
     }if(inputNumber < correctAnswer){
         box.innerHTML = " "
         headlineText.innerText = "Higher!"
@@ -127,6 +135,7 @@ function checkAnswer(correct, input){
 
     if(inputNumber == correctAnswer){
         const wins = "PLAYER_WON"
+
         timeleft = -1
         let loggedInUser = JSON.parse(localStorage.getItem("login"));
         console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
@@ -299,13 +308,14 @@ function reloadToIndex(){
   function popup(wins, timeleft){
         const headlineDiv = document.createElement("div")
         headlineDiv.className = "headlinePopup"
+        const closePopup = document.createElement("div")
+        closePopup.className = "far fa-times-circle"
         const headlineText = document.createElement("h1")
         const popupIcon = document.createElement("div")
         popupIcon.id = "popupIcon"
         const btnDiv = document.createElement("div")
         btnDiv.className = "btnDiv"
         const tryAgainBtn = document.createElement("div")
-        const exitBtn = document.createElement("div")
         const popupBackground = document.getElementById("popupBackground")
 
         const option = document.getElementById("popup")
@@ -339,17 +349,12 @@ function reloadToIndex(){
             headlineDiv.append(headlineText)
         }
         
-        
-        
-       
         tryAgainBtn.className = "defaultBtn"
-        exitBtn.className = "defaultBtn"
         tryAgainBtn.innerText = "Play again!"
-        exitBtn.innerText = "Exit"
 
-        btnDiv.append(tryAgainBtn,exitBtn)
+        btnDiv.append(tryAgainBtn)
 
-        option.append(headlineDiv,popupIcon,btnDiv)
+        option.append(closePopup,headlineDiv,popupIcon,btnDiv)
 
 
         tryAgainBtn.addEventListener("click", () =>{
@@ -361,6 +366,6 @@ function reloadToIndex(){
             startGame()
         })
 
-        exitBtn.addEventListener("click", reloadToIndex )
+        closePopup.addEventListener("click", reloadToIndex )
         popupBackground.append(option)
     }
