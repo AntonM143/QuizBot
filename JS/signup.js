@@ -36,3 +36,6 @@ function clearInput(){
     let inputUsername = document.getElementById("newUsername").value = "";
     let inputPassword = document.getElementById("newPassword").value = "";
 }
+function toMainPage(){
+    location.replace("./index.html")
+}
