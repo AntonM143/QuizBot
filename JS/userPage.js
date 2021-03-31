@@ -64,11 +64,13 @@ function sortToplist() {
           "<li>" + resultList[4].username + resultList[4].score + "</li>" + "</ol>";
                     
           console.log(resultList) */
-          highscoreDiv.innerHTML = "1. " + resultList[0].username + "  " + resultList[0].score + "<br>" + 
-          "2. " + resultList[1].username + "  " + resultList[1].score + "<br>" +                      
-          "3. " + resultList[2].username + "  " + resultList[2].score + "<br>" +                      
-          "4. " + resultList[3].username + "  " + resultList[3].score + "<br>" +                      
-          "5. " + resultList[4].username + "  " + resultList[4].score;              
+          highscoreDiv.innerHTML =
+          "1. " + resultList[0].username + ":  " + resultList[0].score + "<br>" +
+          "2. " + resultList[1].username + ":  " + resultList[1].score + "<br>" +                     
+          "3. " + resultList[2].username + ":  " + resultList[2].score + "<br>" +                     
+          "4. " + resultList[3].username + ":  " + resultList[3].score + "<br>" +                     
+          "5. " + resultList[4].username + ":  " + resultList[4].score;             
+
           console.log(resultList)
      
 
