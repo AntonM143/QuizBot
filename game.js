@@ -58,8 +58,12 @@ function gameMode(){
       
 
         guessButton.addEventListener("click", ()=>{
-            
-            let goBtn = document.getElementById("guessNumberBtn").style.display = "none"  
+
+            document.getElementById("inputNumber").focus()
+
+            if(number != 10){
+                document.getElementById("guessNumberBtn").style.display = "none"  
+            }  
             let inputNumber = document.getElementById("inputNumber").value
             
             checkAnswer(correctAnswer, inputNumber);
@@ -118,7 +122,7 @@ function startGame(){
         botAnswerText.id = "botTextBox"
         
 
-        botAnswerText.innerText =" här kommer svaret från botten!!"
+        
 
         botButton.append(botImgOne)
         botProfileDiv.append(botButton,botName)
@@ -142,7 +146,7 @@ function startGame(){
         botImgTwo.src = "/assets/Bot2.png"
         let botAnswerDivTwo = document.createElement("div")
         botAnswerDivTwo.className = "playerCard"
-        botAnswerTextTwo.innerText =" här kommer svaret från botten!!"
+       
         botAnswerTextTwo.id = "botTextBoxTwo"
         botButtonTwo.append(botImgTwo)
         botProfileDivTwo.append(botButtonTwo,botNameTwo)
@@ -221,7 +225,7 @@ function checkAnswer(correct, input){
             
 
         if(guessOneBot == correctAnswer){
-            const wins = "Bot one won"
+            const wins = "BotMan won!"
             
             console.log("%cBOT ONE WON!!!", "color: blue; font-size: 20px;");
             headlineText.innerText = "BOT ONE WON!"
@@ -244,7 +248,7 @@ function checkAnswer(correct, input){
         setTimeout(()=>{guessTwoBot,answerBox.innerHTML = `TwoPac gissade på ${guessTwoBot}`}, 2000)
     
         if(guessTwoBot == correctAnswer){
-            const wins = "Bot two won"
+            const wins = "TwoPac won!"
             
             console.log("%cBOT TWO WON!!!", "color: blue; font-size: 20px;");
             headlineText.innerText = "BOT TWO WON!"
@@ -384,14 +388,14 @@ function reloadToIndex(){
 
         }
         //checks who won
-        if(wins === "Bot one won" || wins === "Bot two won" || wins === "PLAYER_WON"){
+        if(wins === "BotMan won!" || wins === "TwoPac won!" || wins === "PLAYER_WON"){
             popupIcon.className = "fas fa-sad-cry" 
 
-            if (wins === "BotMan won") {
+            if (wins === "BotMan won!") {
                 headlineText.innerText = wins + "....You lose!"
                 /* headlineText.innerText = "Bot One Won......You lose!" */
                 
-            }if(wins === "TwoPac won"){
+            }if(wins === "TwoPac won!"){
                 headlineText.innerText = wins + "....You lose!"
                 
             }if (wins === "PLAYER_WON"){
