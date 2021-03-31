@@ -20,3 +20,6 @@ function login(){
     infoBox.innerText = "Username or password is incorrect..";
 }
 
+function toMainPage(){
+    location.replace("./index.html")
+}
