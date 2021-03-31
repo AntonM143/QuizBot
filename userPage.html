@@ -17,22 +17,34 @@
             <div class="brand">
                 <img class="brandImg" src="/assets/quizbot1.png" alt="">
             </div>
+            <div class="nav">
+                <button id="signout">Sign out</button>
+            </div>
     </header>
     <main>
+        <div id="popupBackground">
+            <div id="popup" class="popupText">   <br>You're always up against time which is 20 seconds and the Quizbot.
+                <br>
+                <br>Easy - numbers between 1 and 10.
+                <br>Medium - numbers between 1 and 20 + an opponent.
+                <br>Hard - numbers between 1 and 30 + two additional opponents.</div>
+        </div>
         <section class="mainContainerUser">
                 <div class="flexRow">
 
-                    <div class="box-small">
+                    <div class="boxSmall">
                             <div class="flexColumn">
-                                
-                                <img class="profileImg" src="/assets/user_robot.png" alt="">
+                                <div class="imgWrapper">
+                                    <img class="profileImg" src="/assets/user_robot.png" alt="">
+
+                                </div>
                                 <div id="username"></div>
                                 
                                 <div id="botInfo" class="botInfo"></div>
                                 
                             </div>
                     </div>
-                    <div class="box-small">
+                    <div class="boxSmall">
                             <div class="flexColumn">
                                 <h2>Your highscore:</h2>
                                 <div id="result"></div>
@@ -41,7 +53,7 @@
                                 
                             </div>
                     </div>
-                    <div class="box-small">                    
+                    <div class="boxSmall">                    
                             <div class="flexColumn">
                                 <h2>Top 5:</h2>
                                 <div id="highscore"></div>
@@ -55,36 +67,28 @@
                 </div>
                 <div class="startGameBox">
                     <div>
-                        <a href="game.html?difficulty=10"><i class="fas fa-robot" style="color: yellow;"></i></a>
+                        <a href="game.html?difficulty=10"><i class="fas fa-robot botShadow" style="color: yellow;"></i></a>
                         <h2>Easy</h2>
                         
                     </div>
                     <div>
-                        <a href="game.html?difficulty=20"><i class="fas fa-robot" style="color: blue;"></i></a>
+                        <a href="game.html?difficulty=20"><i class="fas fa-robot botShadow" style="color: blue;"></i></a>
                         <h2>Medium</h2>
                         
                     </div>
                     <div>
-                        <a href="game.html?difficulty=30"><i class="fas fa-robot" style="color: red;"></i></a>
+                        <a href="game.html?difficulty=30"><i class="fas fa-robot botShadow" style="color: red;"></i></a>
                         <h2>Hard</h2>
 
                     </div>
                     
                 </div>
                 <div class="questionmark">
-                    <div>
+                    <div class="miniDivRulesBtn">
                         <h5>Rules</h5>
                         <i id="rulesIcon"  class="far fa-question-circle"></i>
                     </div>
                 </div>
-                   
-                    <!-- <div class="playerDiv">
-                        <div class="playerCard">
-                         
-                    </div>
-                    
-                </div>
-                <div class="playerDiv" id="containerBot"></div> -->
         </section>
 
     </main>

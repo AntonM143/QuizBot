@@ -12,7 +12,7 @@ function login(){
     for (let i = 0; i < listOfUsers.length; i++) {
         const user = listOfUsers[i];
         if(username == user.username && password == user.password){
-            location.replace("index.html");
+            location.replace("./userPage.html");
             localStorage.setItem("login", JSON.stringify(username));
             return
         }   
@@ -20,3 +20,6 @@ function login(){
     infoBox.innerText = "Username or password is incorrect..";
 }
 
+function toMainPage(){
+    location.replace("./index.html")
+}

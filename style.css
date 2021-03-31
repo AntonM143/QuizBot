@@ -88,7 +88,7 @@ header{
 .botCard{
 	align-items: center;
 	justify-content: space-around;
-	
+
 }
 
 .botDiv{
@@ -151,16 +151,13 @@ header{
 }
 
 .userInput{
-	display: flex;	
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
 	flex: 1;
 }
-.difBtns{
-	display: flex;
-	justify-content: space-around;
-	}
+
 /* ---------------------------tar bort understreck från A herf-----------------------------------------	 */
 a:hover, a:visited, a:link, a:active
 {
@@ -216,6 +213,7 @@ a:hover, a:visited, a:link, a:active
 	font-size: 2.5rem;
 }
 
+
 #botTextBox, #botTextBoxTwo{
 	font-family: lores-12,sans-serif;
 	font-weight: 500;
@@ -238,6 +236,7 @@ h2
 	padding: 0px;
 	margin-top: 20px;
 }
+
  input {
 	text-align: center;
 	background-color: transparent;
@@ -253,6 +252,7 @@ h2
 input:focus{
 	outline: 0;
 }
+/* -------------------------------------------------regelsidan--------------------------------------------- */
 .rulesDiv{
 	text-align: center;
 	font-family: 'Crimson Text', serif;
@@ -262,29 +262,101 @@ input:focus{
 	font-size: 30px;
 }
 .ruleCard{
-	display: flex;
-	flex-direction: column;
-	width: 80vw;
-	height: 550px;
+	/* width: 500vw;
+	height: 550px; */
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
 .ruleCard1{
 	display: flex;
+	flex-direction: column;
 	margin: 20px;
-	width: auto;
-	height: auto;
+	width: 100vh;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 	border-radius: 10px;
 }
 .ruleInfo{
 	font-family: 'Crimson Text', serif;
+	display: flex;
+	font-size: 1.3vh;
+
 }
 .ruleInfo2{
-	justify-content: space-between;
 	flex-direction: row;
 	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
 }
+#more {
+	display: none;
+}
+.textDif{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.textDif p{
+	margin: 0;
+	padding: 0;
+	font-size: 3vh;
+}
+h2
+{
+	padding: 0px;
+	margin-top: 20px;
+}
+#robot1{
+	font-size: 6vw;
+	color:sandybrown;
+	flex: 1;
+	}
+	.fa-user-clock{
+	font-size: 6vw;
+	color:blue;
+	flex: 1;
+
+	}
+	.fa-cog{
+	font-size: 6vw;
+	color:#E60A13;
+	flex: 1;
+	}
+
+	.ruleInfo2 h1{
+	color: black;
+	font-size: 2.2vh
+	}
+	.timeBot{
+	display: flex;
+	}
+	.wasteBot{
+	display: flex;
+	}
+#registerBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 280px;
+	height: 50px;
+	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 2.5rem;
+}
+.pSize{
+	font-size: 3vh;
+}
+.difBtns{
+	display: flex;
+	justify-content: space-around;
+	}
+/* -------------------------------------------------regelsidan--------------------------------------------- */
 .defaultBtn{
 	display:flex;
 	justify-content: center;
@@ -306,7 +378,6 @@ input:focus{
 .defaultBtn:hover{
 	background-color: #e60a0acd;
 }
-
 
 /* .botCard{
 } */
@@ -342,103 +413,100 @@ input:focus{
     align-items: center;
 }
 /* TIMER */
-  #timeBar {
+ #timeBar {
     margin: 1rem;
     overflow: hidden;
     width: 50%;
-	text-align: center; 
-  }
-  #timeBarChild {
+	text-align: center;
+}
+#timeBarChild {
     height: 20px;
     border-radius:6px;
     animation: roundtime calc(var(--duration) * 1s) linear forwards;
     transform-origin: left center;
     background: linear-gradient(to bottom, red, #900);
-  }
-	.bounce2 {
-		animation: bounce2 2s ease infinite;
-	}
-	#popup{
+ }
+.bounce2 {
+	animation: bounce2 2s ease infinite;
+}
+#popup{
     display: flex;
-		position: relative;
+	position: relative;
     left: 0;
     right: 0;
-		border-radius: 5px;
+	border-radius: 5px;
     flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
+	align-items: center;
+	justify-content: space-between;
     background-color:#FFFF;
     z-index: 99;
-    margin: 15% auto; 
+    margin: 15% auto;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
-    max-width: 70%; 
+    max-width: 70%;
     padding: 0.5rem;
-	}
-	#popupBackground{
-    display: none; 
-    position: fixed; 
-    z-index: 98; 
+}
+#popupBackground{
+    display: none;
+    position: fixed;
+    z-index: 98;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     backdrop-filter:blur(3px);
     background-color:rgba(0, 0, 0, 0.19);
-	}
+}
+.fa-times-circle{
+	padding-right: 10px;
+	position: absolute;
+	text-align: end;
+	font-size: 2em;
+	width: 100%;
+}
+.fa-times-circle:hover{
+	cursor:pointer;
+	color:#48484885
+}
 
+.headlinePopup{
+	display: flex;
+	align-items: center;
+	font-family: lores-12,sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	color: #484848;
+}
+#popupIcon{
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	font-size: 5rem;
+	color: #FFDF00;
+}
 
-	.fa-times-circle{
-		padding-right: 10px;
-		position: absolute;
-		text-align: end;
-		font-size: 2em;
-		width: 100%;
+.btnDiv{
+	display: flex;
+	justify-content: space-around;
+	margin: 5px;
+	width: 100%;
+}
+@keyframes bounce2 {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+@keyframes roundtime {
+	to {
+    /*  More performant than `width`  */
+    transform: scaleX(0);
 	}
-	.fa-times-circle:hover{
-		cursor:pointer;
-		color:#48484885
-	}
-
-
-	.headlinePopup{
-		display: flex;
-		align-items: center;
-		font-family: lores-12,sans-serif;
-		font-weight: 700;
-		font-style: normal;
-		color: #484848;
-	}
-	#popupIcon{
-		display: flex;
-		justify-content: center;
-		margin: 10px;
-		font-size: 5rem;
-		color: #FFDF00;
-	}
-
-	.btnDiv{
-		display: flex;
-		justify-content: space-around;
-		margin: 5px;
-		width: 100%;
-	}
-	@keyframes bounce2 {
-		0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-		40% {transform: translateY(-30px);}
-		60% {transform: translateY(-15px);}
-	}
-  @keyframes roundtime {
-    to {
-       /*  More performant than `width`  */
-      transform: scaleX(0);
-    }
-  } 
+}
 #signout{
-    align-self: flex-end;
 	display:flex;
+	/* align-self: flex-end; */
 	justify-content: center;
 	align-items: center;
-	align-content: center;
+	/* align-content: center; */
 	width: 100px;
 	height: 25px;
 	background-color: #E60A13;
@@ -453,24 +521,115 @@ input:focus{
 	cursor: pointer;
 }
 .nav{
+	/* margin-top: 70px; */
 	display: flex;
 	position: absolute;
 	justify-content: flex-end;
 	align-items: center;
-	top: 0px;
+	top: 15vh;
+	right: 1vw;
 }
 
-	#robot1{
+	/* ---------------------------------------mobile first regelsidan------------------------------------- */
+@media screen and (max-width: 800px) {
+#easyBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 90px;
+	height: 50px;
+	background-color: green;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 1.3rem;
+}
+#mediumBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 90px;
+	height: 50px;
+	background-color:gold;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 1.3rem;
+}
+#hardBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 90px;
+	height: 50px;
+	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 1.3rem;
+}
+.rulesDiv{
+	text-align: center;
+	font-family: 'Crimson Text', serif;
+	font-size: 20px;
+}
+.fineInfo{
+	font-size: 30px;
+}
+.ruleCard{
+	/* width: 500vw;
+	height: 550px; */
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	border-radius: 10px;
+}
+.ruleCard1{
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+	width: auto;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	border-radius: 10px;
+}
+.ruleInfo{
+	font-family: 'Crimson Text', serif;
+	display: flex;
+	font-size: 1.3vh;
+
+}
+.ruleInfo2{
+	flex-direction: row;
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+}
+#robot1{
 	font-size: 6vw;
 	color:sandybrown;
+	flex: 1;
 	}
-	.fa-user-clock{
+
+.fa-user-clock{
 	font-size: 6vw;
 	color:blue;
+	flex: 1;
 	}
-	.fa-cog{
+
+.fa-cog{
 	font-size: 6vw;
 	color:#E60A13;
+
 	}
 	.cogWheel{
 		display: flex;
@@ -575,36 +734,91 @@ input:focus{
 		height: auto;
 		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
 		border-radius: 10px;
-	}
-	.nav{
-		display: flex;
-		position: absolute;
-		justify-content: flex-end;
-		align-items: center;
-		top: 0;
-	}
 
+	flex: 1;
+ 	}
 
-	.botInfo{
-		font-size: 5vw;
+.nav{
+	/* display: flex;
+	position: absolute;
+	justify-content: flex-end;
+	align-items: center; */
+	top: 21vh;
 	}
 
-	#popup{
-		max-width: 100%; 
-	
+.ruleInfo2 h1{
+	color: black;
+	font-size: 2.2vh
 	}
+.timeBot{
+	display: flex;
 
-	.defaultBtn{
-		font-size: 1em;
 	}
-
-	.fa-robot{
-		font-size: 16vw;
-		color:#E60A13;
-	
+.wasteBot{
+	display: flex;
 	}
-
+#registerBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 280px;
+	height: 50px;
+	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 2.5rem;
 }
- 
-/* ---------------------------------------mobile first regelsidan------------------------------------- */
 
+.defaultBtn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	margin: 5px;
+	width: 50%;
+	height: 50px;
+	background-color: #E60A13;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
+	color: #FFFF;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 2rem;
+}
+
+.nav{
+	display: flex;
+	position: absolute;
+	justify-content: flex-end;
+	align-items: center;
+	top: 0;
+}
+
+.botInfo{
+	font-size: 5vw;
+}
+
+#popup{
+	max-width: 100%;
+}
+
+.defaultBtn{
+	font-size: 1em;
+}
+
+.fa-robot{
+	font-size: 16vw;
+	color:#E60A13;
+}
+
+.pSize{
+	font-size: 2.5vh;
+	}
+}
+/* ---------------------------------------mobile first regelsidan------------------------------------- */

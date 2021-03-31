@@ -422,3 +422,7 @@ function reloadToIndex(){
         closePopup.addEventListener("click", reloadToIndex )
         popupBackground.append(option)
     }
+
+    function toMainPage(){
+        location.replace("./userPage.html")
+    }
