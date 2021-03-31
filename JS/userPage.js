@@ -41,7 +41,7 @@ function showResult(){
         }
 
     }
-    resultDiv.innerText = "Play to get a highscore!"
+    resultDiv.innerText = 0
 }
 
 function sortToplist() {
