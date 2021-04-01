@@ -214,7 +214,7 @@ function checkAnswer(correct, input){
     if(number == 20 || number == 30){
         
         let answerBox = document.getElementById("botTextBox")
-        console.log("The bots 1 answer is: " +  guessOneBot)
+        console.log("Botman answer is: " +  guessOneBot)
         
         let botDiv = document.getElementById("containerBot")
         botDiv.style.order = "0"
@@ -244,7 +244,7 @@ function checkAnswer(correct, input){
         
          let answerBox = document.getElementById("botTextBoxTwo")
         answerBox.innerText = "TwoPac gissar på...."
-        console.log("The bots 1 answer is: " +  guessOneBot)
+        console.log("TwoPac answer is: " +  guessTwoBot)
         setTimeout(()=>{guessTwoBot,answerBox.innerHTML = `TwoPac gissade på ${guessTwoBot}`}, 2000)
     
         if(guessTwoBot == correctAnswer){

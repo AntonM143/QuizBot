@@ -68,8 +68,8 @@ function sortToplist() {
           "1. " + resultList[0].username + ":  " + resultList[0].score + "p" + "<br>" +
           "2. " + resultList[1].username + ":  " + resultList[1].score + "p" + "<br>" +                     
           "3. " + resultList[2].username + ":  " + resultList[2].score + "p" + "<br>" +                     
-          "4. " + resultList[3].username + ":  " + resultList[3].score + "p" + "<br>"                      
-          "5. " + resultList[4].username + ":  " + resultList[4].score; + "p"             
+          "4. " + resultList[3].username + ":  " + resultList[3].score + "p" + "<br>" +                    
+          "5. " + resultList[4].username + ":  " + resultList[4].score + "p";             
 
           console.log(resultList)
      
