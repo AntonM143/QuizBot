@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+		font-family: avenir next;
+		font-style: normal;
 }
 body{
     margin: 0;
@@ -24,7 +26,6 @@ img{
 	flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* min-height: 100vh; */
 	margin-top: 3em;
     min-width: 100vw;
 }
@@ -39,7 +40,6 @@ img{
     padding: 16px;
     min-height: 200px;
 	width: 40vw;
-    /* font-family: lores-12,sans-serif; */
     font-family: 'Crimson Text', serif;
 	font-weight: 700;
 	font-style: normal;
@@ -48,16 +48,11 @@ img{
 input {
 	text-align: center;
 	background-color: transparent;
-	/* width: 100%; */
+
 	border:none;
     text-decoration: none;
     font-family: lores-12,sans-serif;
-	/* 
-	
-	font-weight: 700;
-	font-style: normal;
-	color: #484848;
-	font-size: 3rem; */
+
 }
 .createButton {
 	box-shadow:inset 0px 1px 0px 0px #f29c93;
