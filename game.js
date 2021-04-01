@@ -7,7 +7,6 @@ const correctAnswer = Math.floor(Math.random() * number) + 1;
 
 
 let timeleft = 20; 
-
 let guessButton = document.getElementById("guessNumberBtn");
 
 function initSite(){
@@ -35,14 +34,9 @@ function checkLogin(){
         location.replace("login.html");
     }else if(loggedInUser !== null){
         usernameDiv.innerHTML = loggedInUser
-        console.log(loggedInUser)
         return loggedInUser
       }
 }
-
-
-
-
 
 function gameMode(){
 
@@ -53,28 +47,19 @@ function gameMode(){
     }else{
         startGame()
 
-        
         let guessButton = document.getElementById("guessNumberBtn");
-      
-
         guessButton.addEventListener("click", ()=>{
-
-            document.getElementById("inputNumber").focus()
+        document.getElementById("inputNumber").focus()
 
             if(number != 10){
                 document.getElementById("guessNumberBtn").style.display = "none"  
             }  
             let inputNumber = document.getElementById("inputNumber").value
-            
             checkAnswer(correctAnswer, inputNumber);
             //Ta bort denna ifall du vill se vad du precis gissat
             inputNumber = document.getElementById("inputNumber").value = " "
             
-            
         });
-        console.log("The right answer is: " + correctAnswer)
-
-        
     }
 }
 
@@ -86,10 +71,7 @@ const hideGoBtn = () =>{
 
 // func for bot 1 
 function botOne(){
-
-   
     return  Math.floor(Math.random() * number) + 1;
-   
 }
 // func for bot 2 
 function botTwo(){
@@ -98,7 +80,6 @@ function botTwo(){
 
 //func that starts the game ( the timebar)
 function startGame(){
-    console.log("%cTHE GAME WAS STARTED", "color: green; font-size: 20px;")
     let box = document.getElementById("botInfo");
     const headlineText = document.createElement("h1")
     headlineText.innerText = "Start guessing!"
@@ -203,7 +184,6 @@ function checkAnswer(correct, input){
 
         timeleft = -1
         let loggedInUser = JSON.parse(localStorage.getItem("login"));
-        console.log("%cYOU WON!!!", "color: blue; font-size: 20px;");
         
         popup(wins)
         saveResult(loggedInUser)
@@ -214,7 +194,6 @@ function checkAnswer(correct, input){
     if(number == 20 || number == 30){
         
         let answerBox = document.getElementById("botTextBox")
-        console.log("Botman answer is: " +  guessOneBot)
         
         let botDiv = document.getElementById("containerBot")
         botDiv.style.order = "0"
@@ -226,8 +205,6 @@ function checkAnswer(correct, input){
 
         if(guessOneBot == correctAnswer){
             const wins = "BotMan won!"
-            
-            console.log("%cBOT ONE WON!!!", "color: blue; font-size: 20px;");
             headlineText.innerText = "BOT ONE WON!"
             box.append(headlineText)
             timeleft = -1
@@ -244,20 +221,15 @@ function checkAnswer(correct, input){
         
          let answerBox = document.getElementById("botTextBoxTwo")
         answerBox.innerText = "TwoPac gissar på...."
-        console.log("TwoPac answer is: " +  guessTwoBot)
         setTimeout(()=>{guessTwoBot,answerBox.innerHTML = `TwoPac gissade på ${guessTwoBot}`}, 2000)
     
         if(guessTwoBot == correctAnswer){
             const wins = "TwoPac won!"
-            
-            console.log("%cBOT TWO WON!!!", "color: blue; font-size: 20px;");
             headlineText.innerText = "BOT TWO WON!"
             box.append(headlineText)
     
             timeleft = -1
             gameContainer.style.display = "none"
-            /* let user.username = "BotTwo" */
-            /* setTimeout(()=>{popup(wins, timeleft)},1000) */
             timeBar.innerHTML = " "
             box.innerText = "Bot two won!!";
             popup(wins, timeleft)
@@ -271,9 +243,7 @@ function saveResult (currentPlayer){
     /* spara resultat i local storage */
     let resultList = JSON.parse(localStorage.getItem("result"));
     if(resultList == null){
-        console.log("Listan är tom!!");
         resultList = [];
-        console.log(number)
         let player
         if(number == 10){
             player = {
@@ -346,11 +316,8 @@ function timer(){
              if (timeleft === 0 ) { 
             clearInterval(interval)
             popup(null,timeleft)
-            console.log(timeleft)
             return 
             }
-             
-          /* timeBar.innerHTML = timeleft */
           timeleft -= 1
 
         }, 1000);
@@ -378,10 +345,8 @@ function reloadToIndex(){
         const option = document.getElementById("popup")
 
         popupBackground.style.display = "block"
-        console.log(wins)
         //checks if the time is = 0
         if(timeleft === 0 ){
-            console.log("vad fan tiden gick ut")
             headlineText.innerText = "You lose!"
             headlineDiv.append(headlineText)
             popupIcon.className = "fas fa-sad-cry"  
@@ -393,7 +358,7 @@ function reloadToIndex(){
 
             if (wins === "BotMan won!") {
                 headlineText.innerText = wins + "....You lose!"
-                /* headlineText.innerText = "Bot One Won......You lose!" */
+
                 
             }if(wins === "TwoPac won!"){
                 headlineText.innerText = wins + "....You lose!"
