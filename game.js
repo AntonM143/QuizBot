@@ -235,7 +235,7 @@ function checkAnswer(correct, input){
             timeBar.innerHTML = " "
             box.innerText = "Bot one won!!";
             popup(wins, timeleft)
-            saveResult("BotOne")
+            saveResult("BotMan")
         }
     }
 
@@ -261,7 +261,7 @@ function checkAnswer(correct, input){
             timeBar.innerHTML = " "
             box.innerText = "Bot two won!!";
             popup(wins, timeleft)
-            saveResult("BotTwo")
+            saveResult("TwoPac")
             
         }
     }  
