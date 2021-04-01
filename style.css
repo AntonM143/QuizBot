@@ -348,6 +348,8 @@ h2
 	font-style: normal;
 	font-weight: bolder;
 	font-size: 2.5rem;
+	border:1px solid #d83526;
+	cursor: pointer;
 }
 .pSize{
 	font-size: 3vh;
@@ -756,5 +758,16 @@ h3{
 	font-weight: bolder;
 	font-size: 2rem;
 	}
+}
+#rulesBtn{
+	border: none;
+	color: #E60A13;
+	background-color: white;
+	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.503);
+	cursor: pointer;
+	border-radius: 10px;
+	font-family: avenir next;
+	font-weight: 700;
+	padding: 5px;
 }
 /* ---------------------------------------mobile first regelsidan------------------------------------- */
