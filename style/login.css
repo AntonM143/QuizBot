@@ -38,6 +38,7 @@ img{
 	border-radius: 10px;
     padding: 16px;
     min-height: 200px;
+	width: 40vw;
     /* font-family: lores-12,sans-serif; */
     font-family: 'Crimson Text', serif;
 	font-weight: 700;
@@ -87,11 +88,14 @@ input {
 	margin-top: 1em;
 	font-family: lores-12,sans-serif;
 }
-@media screen and (max-width: 350px){
+@media screen and (max-width: 800px){
 	img{
 		height: 100px;
 	}
 	.mainContainer{
 		margin-top: 5px;
+	}
+	.signupForm{
+		width: 100vw;
 	}
 }
