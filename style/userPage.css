@@ -10,10 +10,8 @@
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.503);
     border-radius: 10px;
     width:80%;
-
     text-align: center;
-    /* justify-content: center;
-    align-items: center; */
+  
 }
 
 .headlineDifficulty{
@@ -23,6 +21,7 @@
 	font-size: 1rem;
 	color: #484848;
 }
+
 .boxSmall{
 	display: flex;
 	justify-content: center;
@@ -75,7 +74,6 @@ h5{
 }
 .popupText{
     text-align: center;
-    font-family: 'Crimson Text', serif;
     padding: 30px !important;
 }
 #highscore{
@@ -120,9 +118,7 @@ h5{
     }
 }
 @media screen and (max-width: 450px){
-    /* .startGameBox{
-        flex-direction: column;
-    } */
+
     .flexRow{
         width: 90%;
     }

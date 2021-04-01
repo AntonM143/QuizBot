@@ -255,7 +255,8 @@ input:focus{
 /* -------------------------------------------------regelsidan--------------------------------------------- */
 .rulesDiv{
 	text-align: center;
-	font-family: 'Crimson Text', serif;
+	font-family: avenir next;
+	font-style: normal;
 	font-size: 20px;
 }
 .fineInfo{
@@ -276,7 +277,8 @@ input:focus{
 	border-radius: 10px;
 }
 .ruleInfo{
-	font-family: 'Crimson Text', serif;
+	font-family: avenir next;
+	font-style: normal;
 	display: flex;
 	font-size: 1.3vh;
 
@@ -287,8 +289,15 @@ input:focus{
 	justify-content: space-evenly;
 	width: 100%;
 }
+
+.ruleInfo2, h1{
+	font-family: avenir next;
+	font-style: normal;
+}
+
 #more {
 	display: none;
+	font-size: 1em;
 }
 .textDif{
 	display:flex;
@@ -313,7 +322,7 @@ h2
 	}
 	.fa-user-clock{
 	font-size: 6vw;
-	color:blue;
+	color:#3e4888;
 	flex: 1;
 
 	}
@@ -347,12 +356,12 @@ h2
 	font-family: avenir next;
 	font-style: normal;
 	font-weight: bolder;
-	font-size: 2.5rem;
+	font-size: 2.3rem;
 	border:1px solid #d83526;
 	cursor: pointer;
 }
 .pSize{
-	font-size: 3vh;
+	font-size: 1.5rem;
 }
 .difBtns{
 	display: flex;
@@ -602,7 +611,6 @@ main{
 
 .rulesDiv{
 	text-align: center;
-	font-family: 'Crimson Text', serif;
 	font-size: 20px;
 }
 
@@ -627,7 +635,6 @@ main{
 }
 
 .ruleInfo{
-	font-family: 'Crimson Text', serif;
 	display: flex;
 	font-size: 1.3vh;
 }
